@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99A7825F-8985-4FE7-94A2-D371C606DFE7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POS</RootNamespace>
+    <AssemblyName>POS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\Desktop\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainClass.cs" />
+    <Compile Include="Model\frnCategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frnCategoryAdd.Designer.cs">
+      <DependentUpon>frnCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SampleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleAdd.Designer.cs">
+      <DependentUpon>SampleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SampleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleView.Designer.cs">
+      <DependentUpon>SampleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCategoryView.Designer.cs">
+      <DependentUpon>frmCategoryView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frnCategoryAdd.resx">
+      <DependentUpon>frnCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SampleAdd.resx">
+      <DependentUpon>SampleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SampleView.resx">
+      <DependentUpon>SampleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCategoryView.resx">
+      <DependentUpon>frmCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RMDataSet.xsc">
+      <DependentUpon>RMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RMDataSet.xss">
+      <DependentUpon>RMDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dogWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dog-house-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dog-house-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-restaurant-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-medium-priority-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-products-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-table-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chef-hat-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chef-hat-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-installing-updates-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-installing-whıte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chef-hatwhıte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-whıte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-table-whıte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-products-whıte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-medium-priority-whıte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sum-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giris.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pen-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-full-recycle-bin-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adsız tasarım.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duzenlenmis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee-coffee-latte-latte-art-morning-cup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace POS.Model
+{
+    public partial class frnCategoryAdd : SampleAdd
+    {
+        public frnCategoryAdd()
+        {
+            InitializeComponent();
+        }
+
+        public int id = 0;
+        public override void btnSave_Click(object sender, EventArgs e)
+        {
+            string qry = "";
+
+            if (id == 0)//insert
+            {
+                qry = "Insert into category Values(@Name)";
+            }
+            else// Update
+            {
+                qry = "Update category  Set catName= @Name where catID = @id ";
+            }
+
+            Hashtable ht = new Hashtable();
+            ht.Add("id", id);
+            ht.Add ("@Name", txtName.Text);
+
+           if( MainClass.SQL(qry, ht) > 0)
+            {
+                MessageBox.Show("Saved successfully...");
+                id= 0;
+                txtName.Focus();
+            }
+        }
+    }
+}
