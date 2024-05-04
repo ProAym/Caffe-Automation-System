@@ -47,7 +47,7 @@ namespace POS
             //Create database and user tables
             if( MainClass.IsValidUser(TxtUser.Text, TxtPass.Text) == false)
             {
-                MessageBox.Show("Invalid username or password!");
+                MessageBox.Show("Hatali kullanici adi veya sifre!");
             }
             else
             {

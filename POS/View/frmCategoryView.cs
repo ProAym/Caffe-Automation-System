@@ -1,5 +1,6 @@
 ﻿using POS.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,12 +37,38 @@ namespace POS.View
         
         public override void btnAdd_Click(object sender, EventArgs e)
         {
-            frnCategoryAdd frm = new frnCategoryAdd();
-            frm.ShowDialog();
+            //frnCategoryAdd frm = new frnCategoryAdd();
+            //frm.ShowDialog();
+
+            MainClass.BlurBackground(new frnCategoryAdd());
             GetData();
         }
         public override void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            GetData();        }
+            GetData();        
+        }
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvedit")
+            {
+                frnCategoryAdd frm = new frnCategoryAdd();
+                frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvName"].Value);
+                MainClass.BlurBackground(frm);
+                GetData();
+            }
+            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvdel") 
+            {
+                int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                string qry = "Delete from category where catID= " + id + "";
+                Hashtable ht = new Hashtable();
+                MainClass.SQL(qry, ht);
+
+                MessageBox.Show("başarıyla Silindi");
+                GetData();
+            }
+
+        }
     }
 }

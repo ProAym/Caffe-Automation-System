@@ -57,9 +57,11 @@
             // 
             // guna2Separator1
             // 
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.Location = new System.Drawing.Point(33, 139);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(991, 18);
+            this.guna2Separator1.Size = new System.Drawing.Size(913, 18);
             this.guna2Separator1.TabIndex = 4;
             // 
             // txtSearch
@@ -90,6 +92,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.CheckedState.Parent = this.btnAdd;
             this.btnAdd.HoverState.Parent = this.btnAdd;
             this.btnAdd.Image = global::POS.Properties.Resources.icons8_sum_60;

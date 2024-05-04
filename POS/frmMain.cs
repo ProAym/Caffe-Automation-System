@@ -18,9 +18,18 @@ namespace POS
             InitializeComponent();
         }
 
+        //for accessing frm main    
+        static frmMain _obj;
+        public static frmMain Instance
+        {
+            get {if  (_obj == null) { _obj = new frmMain(); } return _obj; }
+        }
+
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             lblUser.Text = MainClass.USER;
+            _obj = this;
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -49,6 +58,33 @@ namespace POS
         private void btnCategorie_Click(object sender, EventArgs e)
         {
             AddControls(new frmCategoryView());
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmUrunlerView());
+        }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmTableView());
+        }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            AddControls(new frmPersonelView());
+        }
+
+       
+
+        private void btnSetings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

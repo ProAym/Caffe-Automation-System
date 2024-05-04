@@ -70,6 +70,24 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="MainClass.cs" />
+    <Compile Include="Model\frmPersonelAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmPersonelAdd.Designer.cs">
+      <DependentUpon>frmPersonelAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmTableAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmTableAdd.Designer.cs">
+      <DependentUpon>frmTableAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmUrunAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmUrunAdd.Designer.cs">
+      <DependentUpon>frmUrunAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\frnCategoryAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,11 +113,35 @@
     <Compile Include="SampleView.Designer.cs">
       <DependentUpon>SampleView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Secme1Ekran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secme1Ekran.Designer.cs">
+      <DependentUpon>Secme1Ekran.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmCategoryView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmCategoryView.Designer.cs">
       <DependentUpon>frmCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmPersonelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmPersonelView.Designer.cs">
+      <DependentUpon>frmPersonelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTableView.Designer.cs">
+      <DependentUpon>frmTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmUrunlerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUrunlerView.Designer.cs">
+      <DependentUpon>frmUrunlerView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -109,6 +151,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmPersonelAdd.resx">
+      <DependentUpon>frmPersonelAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmTableAdd.resx">
+      <DependentUpon>frmTableAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmUrunAdd.resx">
+      <DependentUpon>frmUrunAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frnCategoryAdd.resx">
       <DependentUpon>frnCategoryAdd.cs</DependentUpon>
@@ -129,8 +180,20 @@
     <EmbeddedResource Include="SampleView.resx">
       <DependentUpon>SampleView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Secme1Ekran.resx">
+      <DependentUpon>Secme1Ekran.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmCategoryView.resx">
       <DependentUpon>frmCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmPersonelView.resx">
+      <DependentUpon>frmPersonelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTableView.resx">
+      <DependentUpon>frmTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUrunlerView.resx">
+      <DependentUpon>frmUrunlerView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -239,6 +302,115 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aesthetic-brown-lines-background-scaled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dog-house-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aesthetic-brown-lines-background-scaled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CODASK Cafe gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CODASK Cafe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CODASK Cafessss.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CODASK Cafessss1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kafe butuk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kafe butuk1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-medium-priority-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-products-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-table-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-installing-updates-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dog-house-50 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-medium-priority-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-medium-priority-50 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-products-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-table-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-installing-updates-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-medium-priority-50 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31020676-male-and-female-staff-in-coffee-shop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\How-To-Ensure-Your-Coffee-Shop-Staff-Offers-Great-Customer-Service-Tycoonstory.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sum-90.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

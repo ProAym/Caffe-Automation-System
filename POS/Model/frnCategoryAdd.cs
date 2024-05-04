@@ -38,8 +38,9 @@ namespace POS.Model
 
            if( MainClass.SQL(qry, ht) > 0)
             {
-                MessageBox.Show("Saved successfully...");
+                MessageBox.Show("Bşarıyla Kaydedildi...");
                 id= 0;
+                txtName.Text = "";
                 txtName.Focus();
             }
         }

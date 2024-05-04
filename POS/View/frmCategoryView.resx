@@ -117,19 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAM4SURBVHhe7ZxBahRRFEVrpC5AocpEnDjKEgSrICMXY8eZ
+        SrVQu4tmpC5F4kBH+j9eg/guFdLmXjr934FDILzO+f1ouhsLq0uSJEmSJEmSJEmSJEm6bpmePng/Dq+3
+        03CxHYdv5efPg7Q8t3kcPhbPNi+f3cfT97BMR8fbqf8SDnXgzmP/uT53rEFLfSW3uOQ/1mVbXtl4u6CH
+        aMgN1qGjRC7+ibbnOHzAOnSUD4VLGm/IugOsQwcLtyjWoYNFWxTr0MGiLYp16GDRFsU6dLBoi2IdOli0
+        RbEOHSxqcey/l++vb5bnTx5Xy1est/PU/6CzBrEOHSxqsSwZR7iiLpvOGsQRdLCow/nFwwFHuGKZHvVs
+        1iGOoINFHSIfYLMOkdfBog6RD7BZh8jrYFGHyAfYrEPkdbCoQ+QDbNYh8jpY1CHyATbrEHkdLOoQ+QCb
+        dYi8DhZ1iHyAzTpEXgeLOkQ+wGYdIq+DRR0iH2CzDpHXwaIOkQ+wWYfI62BRh8gH2KxD5HWwqEPkA2zW
+        IfI6WNQh8gE26xB5HSzqEPkAm3WIvA4WdYh8gM06RF4Hi67615UR/Im94X+u1OBP6GDRVcmVkX1jlys1
+        eKgOFl2TXRnZN3a5UoOH6mDRNe/CoufT4yN29jXxUB0suuodeOso53wXzn2NeKgOFl01Pwx3g0UdIh9g
+        sw6R18GiDpEPsFmHyOtgUYfIB9isQ+R1sKhD5ANs1iHyOljUIfIBNusQeR0s6hD5AJt1iLwOFnWIfIDN
+        OkReB4s6RD7AZh0ir4NFHSIfYLMOkdfBog6RD7BZh8jrYFGHyAfYrEPkdbCoQ+QDbNYh8jpY1CHyATbr
+        EHkdLOoQ+QCbdYi8DhZ1iHyAzTpEXgeLOmRXana5MnJb4gg6WNQiuVJTfn/jKyO3JY6gg0Ut5n/obFOs
+        QweLtijWoYNFWxTr0MGiLYp16GDRFsU6dLBoi2IdOsrXqrwd2zR8xTp0lFDeYNB0g8EzGm/I8op+hXXo
+        qDdArTdCZQdowrH/tJyc3MM6tNRb+za57LLk+g9ZWIOH+sou8U19vzrkD8jfz60/r28XtldykiRJkiRJ
+        kiRJkiTJXtN1vwCy0q9pSS7BvAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="dgvSno.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="dgvid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="dgvName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="dgvedit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="dgvdel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>
