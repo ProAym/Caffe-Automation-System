@@ -213,6 +213,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IceLatte {
+            get {
+                object obj = ResourceManager.GetObject("IceLatte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_chef_hat_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-chef-hat-50", resourceCulture);
@@ -326,6 +336,46 @@ namespace POS.Properties {
         internal static System.Drawing.Bitmap icons8_installing_whıte {
             get {
                 object obj = ResourceManager.GetObject("icons8-installing-whıte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_left_arrow_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-left-arrow-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_left_arrow_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-left-arrow-1001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_logout_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-logout-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_logout_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-logout-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -636,6 +686,16 @@ namespace POS.Properties {
         internal static System.Drawing.Bitmap staff_symbol {
             get {
                 object obj = ResourceManager.GetObject("staff-symbol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_05_05_at_18_21_25_6c35e4da {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-05-05 at 18.21.25_6c35e4da", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

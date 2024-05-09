@@ -1,5 +1,4 @@
-﻿using POS.Model;
-using POS.View;
+﻿using POS.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,22 +11,22 @@ using System.Windows.Forms;
 
 namespace POS
 {
-    public partial class frmMain : Form
+    public partial class PersonelMenu : Form
     {
-        public frmMain()
+        public PersonelMenu()
         {
             InitializeComponent();
         }
 
         //for accessing frm main    
-        static frmMain _obj;
-        public static frmMain Instance
+        static PersonelMenu _obj;
+        public static PersonelMenu Instance
         {
-            get {if  (_obj == null) { _obj = new frmMain(); } return _obj; }
+            get { if (_obj == null) { _obj = new PersonelMenu(); } return _obj; }
         }
 
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void PersonelMenu_Load(object sender, EventArgs e)
         {
             lblUser.Text = MainClass.USER;
             _obj = this;
@@ -40,16 +39,16 @@ namespace POS
 
         //Method to add controls to main form
 
-        
 
-           public  void AddControls(Form f)
-            {
-            CenterPanel.Controls.Clear();  
+
+        public void AddControls(Form f)
+        {
+            CenterPanel.Controls.Clear();
             f.Dock = DockStyle.Fill;
             f.TopLevel = false;
             CenterPanel.Controls.Add(f);
             f.Show();
-            }
+        }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -76,25 +75,22 @@ namespace POS
             AddControls(new frmPersonelView());
         }
 
-
-
-        private void btnSetings_Click(object sender, EventArgs e)
+        private void guna2ControlBox2_Click(object sender, EventArgs e)
         {
-            frmPOS frm = new frmPOS();
+            this.Hide();
+            Form1 frm = new Form1();
             frm.Show();
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Çıkış Yapmak istediğinizden Emin Misiniz?", "Çıkış Yap", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Çıkış Yapmak istediğinizden Emin Misiniz?", "Çıkış Yap",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
-                frmMain frm = new frmMain();
+                PersonelGiris frm = new PersonelGiris();
                 frm.Show();
             }
-
+            
         }
     }
-
-
-    }
+}

@@ -76,6 +76,12 @@
     <Compile Include="Model\frmPersonelAdd.Designer.cs">
       <DependentUpon>frmPersonelAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\frmPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\frmTableAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,24 @@
     </Compile>
     <Compile Include="Model\frnCategoryAdd.Designer.cs">
       <DependentUpon>frnCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ucProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\ucProduct.Designer.cs">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGiris.Designer.cs">
+      <DependentUpon>PersonelGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelMenu.Designer.cs">
+      <DependentUpon>PersonelMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +179,9 @@
     <EmbeddedResource Include="Model\frmPersonelAdd.resx">
       <DependentUpon>frmPersonelAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\frmTableAdd.resx">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +190,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frnCategoryAdd.resx">
       <DependentUpon>frnCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\ucProduct.resx">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGiris.resx">
+      <DependentUpon>PersonelGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelMenu.resx">
+      <DependentUpon>PersonelMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -411,6 +447,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-sum-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2024-05-05 at 18.21.25_6c35e4da.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-left-arrow-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-left-arrow-1001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IceLatte.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

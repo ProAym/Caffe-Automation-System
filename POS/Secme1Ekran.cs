@@ -24,7 +24,9 @@ namespace POS
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            PersonelGiris frm = new PersonelGiris();
+            frm.Show();
         }
 
         private void Yonetici_Click(object sender, EventArgs e)
@@ -32,6 +34,11 @@ namespace POS
             this.Hide();
             Form1 frm = new Form1();
             frm.Show();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
