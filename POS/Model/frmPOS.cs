@@ -54,8 +54,21 @@ namespace POS.Model
                     b.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
                     b.Text = row["catName"].ToString();
 
+                    // event for click
+                    b.Click += new EventHandler(b_Click);
+
                     CategoryPanel.Controls.Add(b);
                 }
+            }
+        }
+
+        private void b_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button b = (Guna.UI2.WinForms.Guna2Button)sender;
+            foreach (var item in ProductPanel.Controls)
+            {
+                var pro = (ucProduct)item;
+                pro.Visible = pro.PCategory.ToLower().Contains(b.Text.Trim().ToLower());
             }
         }
 
@@ -98,6 +111,10 @@ namespace POS.Model
                 }
 
                 guna2DataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.PName, 1, wdg.PPrice, wdg.PPrice });
+                GetTotal();
+
+
+
             };
         }
 
@@ -137,7 +154,23 @@ namespace POS.Model
             {
                 count++;
                 row.Cells[0].Value = count;
+
             }
         }
+
+            private void GetTotal()
+            {
+                double tot = 0;
+                lblTotal.Text = "";
+                foreach (DataGridViewRow item in guna2DataGridView1.Rows)
+                {
+                    tot += double.Parse(item.Cells["dgvAmount"].Value.ToString());
+                }
+
+                lblTotal.Text = tot.ToString("N2");
+            }
+
+        
     }
-}
+    }
+
