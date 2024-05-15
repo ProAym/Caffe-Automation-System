@@ -58,5 +58,12 @@ namespace POS
 
             //insert a user first
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Secme1Ekran frm = new Secme1Ekran();
+            frm.Show();
+        }
     }
 }

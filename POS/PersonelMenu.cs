@@ -1,4 +1,5 @@
-﻿using POS.View;
+﻿using POS.Model;
+using POS.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,6 +92,12 @@ namespace POS
                 frm.Show();
             }
             
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            frmPOS frm = new frmPOS();
+            frm.Show();
         }
     }
 }

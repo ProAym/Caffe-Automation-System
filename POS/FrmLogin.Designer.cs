@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnLogin = new Guna.UI2.WinForms.Guna2TileButton();
             this.BtnExit = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label1
@@ -141,12 +142,32 @@
             this.BtnExit.Size = new System.Drawing.Size(45, 29);
             this.BtnExit.TabIndex = 7;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = global::POS.Properties.Resources.icons8_left_arrow_100;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Location = new System.Drawing.Point(12, 1);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(43, 40);
+            this.guna2Button1.TabIndex = 15;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // Form1
             // 
+            this.AcceptButton = this.BtnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::POS.Properties.Resources.g;
             this.ClientSize = new System.Drawing.Size(364, 535);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.label2);
@@ -173,6 +194,7 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TileButton BtnLogin;
         private Guna.UI2.WinForms.Guna2ControlBox BtnExit;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
 

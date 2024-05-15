@@ -78,6 +78,7 @@ namespace POS
 
 
 
+
         private void btnSetings_Click(object sender, EventArgs e)
         {
             frmPOS frm = new frmPOS();
@@ -89,7 +90,7 @@ namespace POS
             if (MessageBox.Show("Çıkış Yapmak istediğinizden Emin Misiniz?", "Çıkış Yap", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
-                frmMain frm = new frmMain();
+                Form1 frm = new Form1();
                 frm.Show();
             }
 

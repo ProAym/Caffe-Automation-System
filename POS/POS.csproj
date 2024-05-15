@@ -70,17 +70,41 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="MainClass.cs" />
+    <Compile Include="Model\FaturaListeleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FaturaListeleri.Designer.cs">
+      <DependentUpon>FaturaListeleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmOnay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmOnay.Designer.cs">
+      <DependentUpon>FrmOnay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\frmPersonelAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\frmPersonelAdd.Designer.cs">
       <DependentUpon>frmPersonelAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\FrmPersonelSecme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmPersonelSecme.Designer.cs">
+      <DependentUpon>FrmPersonelSecme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\frmPOS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\frmPOS.Designer.cs">
       <DependentUpon>frmPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FrmSiparisSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmSiparisSelect.Designer.cs">
+      <DependentUpon>FrmSiparisSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\frmTableAdd.cs">
       <SubType>Form</SubType>
@@ -176,11 +200,20 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmOnay.resx">
+      <DependentUpon>FrmOnay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\frmPersonelAdd.resx">
       <DependentUpon>frmPersonelAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmPersonelSecme.resx">
+      <DependentUpon>FrmPersonelSecme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmSiparisSelect.resx">
+      <DependentUpon>FrmSiparisSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmTableAdd.resx">
       <DependentUpon>frmTableAdd.cs</DependentUpon>

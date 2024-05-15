@@ -286,7 +286,7 @@
             this.btnTable.ShadowDecoration.Parent = this.btnTable;
             this.btnTable.Size = new System.Drawing.Size(239, 51);
             this.btnTable.TabIndex = 1;
-            this.btnTable.Text = "Masalar";
+            this.btnTable.Text = "Siparişler Listesi";
             this.btnTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTable.TextOffset = new System.Drawing.Point(20, 0);
             this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
