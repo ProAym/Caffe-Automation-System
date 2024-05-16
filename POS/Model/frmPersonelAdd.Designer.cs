@@ -36,6 +36,8 @@
             this.cbRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTCKN = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtSifre = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -80,15 +82,15 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 321);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 389);
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(519, 65);
+            this.guna2Panel1.Size = new System.Drawing.Size(584, 65);
             this.guna2Panel1.TabIndex = 4;
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(519, 110);
+            this.guna2Panel2.Size = new System.Drawing.Size(584, 110);
             this.guna2Panel2.TabIndex = 5;
             // 
             // txtName
@@ -182,8 +184,7 @@
             "Kasiyer",
             "Garson",
             "Temizlik Görevlisi",
-            "Yönetici",
-            "Diğer"});
+            "Yönetici"});
             this.cbRole.ItemsAppearance.Parent = this.cbRole;
             this.cbRole.Location = new System.Drawing.Point(27, 214);
             this.cbRole.Name = "cbRole";
@@ -224,14 +225,49 @@
             this.txtTCKN.Size = new System.Drawing.Size(227, 38);
             this.txtTCKN.TabIndex = 3;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 265);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Sifre";
+            // 
+            // TxtSifre
+            // 
+            this.TxtSifre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtSifre.DefaultText = "";
+            this.TxtSifre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtSifre.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtSifre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtSifre.DisabledState.Parent = this.TxtSifre;
+            this.TxtSifre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtSifre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtSifre.FocusedState.Parent = this.TxtSifre;
+            this.TxtSifre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtSifre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtSifre.HoverState.Parent = this.TxtSifre;
+            this.TxtSifre.Location = new System.Drawing.Point(27, 294);
+            this.TxtSifre.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.TxtSifre.Name = "TxtSifre";
+            this.TxtSifre.PasswordChar = '\0';
+            this.TxtSifre.PlaceholderText = "";
+            this.TxtSifre.SelectedText = "";
+            this.TxtSifre.ShadowDecoration.Parent = this.TxtSifre;
+            this.TxtSifre.Size = new System.Drawing.Size(227, 35);
+            this.TxtSifre.TabIndex = 3;
+            // 
             // frmPersonelAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 386);
+            this.ClientSize = new System.Drawing.Size(584, 454);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtSifre);
             this.Controls.Add(this.txtTCKN);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label4);
@@ -247,7 +283,9 @@
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.txtPhone, 0);
             this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.txtTCKN, 0);
+            this.Controls.SetChildIndex(this.TxtSifre, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.cbRole, 0);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -269,5 +307,7 @@
         public Guna.UI2.WinForms.Guna2ComboBox cbRole;
         private System.Windows.Forms.Label label5;
         public Guna.UI2.WinForms.Guna2TextBox txtTCKN;
+        private System.Windows.Forms.Label label6;
+        public Guna.UI2.WinForms.Guna2TextBox TxtSifre;
     }
 }

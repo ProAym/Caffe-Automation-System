@@ -22,19 +22,27 @@ namespace POS
         //Method to check User Validation
 
 
-        public static bool IsValidUser(string user, string password)
+        public static bool IsValidUser(string user, string password, string userType)
         {
             bool isValid = false;
+            string qry = "";
+
+            if (userType == "Personel")
+            {
+                qry = "Select * from Personel where TCKN = @TCKN and pSifre = @Password";
+            }
+            else if (userType == "Yonetici")
+            {
+                qry = "Select * from Yonetici where TCKN = @TCKN and Sifre = @Password";
+            }
 
             using (SqlConnection con = new SqlConnection(con_string))
             {
                 try
                 {
                     con.Open();
-
-                    string qry = "Select * from users where username = @Username and upass = @Password";
                     SqlCommand cmd = new SqlCommand(qry, con);
-                    cmd.Parameters.AddWithValue("@Username", user);
+                    cmd.Parameters.AddWithValue("@TCKN", user);
                     cmd.Parameters.AddWithValue("@Password", password);
 
                     DataTable dt = new DataTable();
@@ -44,8 +52,9 @@ namespace POS
                     if (dt.Rows.Count > 0)
                     {
                         isValid = true;
-                        USER = dt.Rows[0]["uName"].ToString();
+                        USER = userType == "Yonetici" ? dt.Rows[0]["Isim"].ToString() : dt.Rows[0]["pAd"].ToString();
                     }
+
                 }
                 catch (SqlException ex)
                 {
@@ -57,16 +66,17 @@ namespace POS
             return isValid;
         }
 
+
         //create username proprety
 
         public static string user;
-
+        
         public static string USER
         {
             get { return user; }
             private set { user = value; }
         }
-
+        
 
 
         //Method for curd operation
@@ -186,5 +196,7 @@ namespace POS
             cb.DataSource = dt;
             cb.SelectedIndex = -1;
         }
+
+        
     }
 }

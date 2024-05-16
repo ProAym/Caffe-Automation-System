@@ -25,14 +25,14 @@ namespace POS
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PersonelGiris frm = new PersonelGiris();
+            PersonelGiris frm = new PersonelGiris("Personel");
             frm.Show();
         }
 
         private void Yonetici_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 frm = new Form1();
+            Form1 frm = new Form1("Yonetici");
             frm.Show();
         }
 

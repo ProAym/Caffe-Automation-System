@@ -12,9 +12,12 @@ namespace POS
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private string userType;
+        public Form1(string userType)
         {
             InitializeComponent();
+            this.userType = userType;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,16 +47,20 @@ namespace POS
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            string username = TxtUser.Text;
+            string password = TxtPass.Text;
             //Create database and user tables
-            if( MainClass.IsValidUser(TxtUser.Text, TxtPass.Text) == false)
+            if ( MainClass.IsValidUser(TxtUser.Text, TxtPass.Text, userType))
             {
-                MessageBox.Show("Hatali kullanici adi veya sifre!");
+                
+                MessageBox.Show($"Hoşgeldiniz, {MainClass.USER}");
+                this.Hide();
+                frmMain frm = new frmMain();
+                frm.Show();
             }
             else
             {
-                this.Hide();
-                frmMain frm =  new frmMain();
-                frm.Show();
+                MessageBox.Show("Hatali kullanici adi veya sifre!");
             }
 
             //insert a user first

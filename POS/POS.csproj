@@ -76,6 +76,12 @@
     <Compile Include="Model\FaturaListeleri.Designer.cs">
       <DependentUpon>FaturaListeleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\FrmOdemeAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\FrmOdemeAl.Designer.cs">
+      <DependentUpon>FrmOdemeAl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\FrmOnay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FaturaListeleri.resx">
+      <DependentUpon>FaturaListeleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FrmOdemeAl.resx">
+      <DependentUpon>FrmOdemeAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\FrmOnay.resx">
       <DependentUpon>FrmOnay.cs</DependentUpon>
@@ -498,6 +510,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IceLatte.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Raporlar\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

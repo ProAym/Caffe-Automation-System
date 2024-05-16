@@ -21,6 +21,11 @@ namespace POS.Model
         public int id = 0;
         public override void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Lütfen bir isim girin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method without proceeding further
+            }
             string qry = "";
 
             if (id == 0)//insert

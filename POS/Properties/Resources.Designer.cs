@@ -293,6 +293,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_90 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-edit-90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_full_recycle_bin_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-full-recycle-bin-48", resourceCulture);
@@ -456,6 +466,16 @@ namespace POS.Properties {
         internal static System.Drawing.Bitmap icons8_plus_256 {
             get {
                 object obj = ResourceManager.GetObject("icons8-plus-256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-print-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

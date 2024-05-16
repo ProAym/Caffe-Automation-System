@@ -12,22 +12,29 @@ namespace POS
 {
     public partial class PersonelGiris : Form
     {
-        public PersonelGiris()
+        private string userType;
+        public PersonelGiris(string userType)
         {
             InitializeComponent();
+            this.userType = userType;
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (MainClass.IsValidUser(TxtUser.Text, TxtPass.Text) == false)
+            string username = TxtUser.Text;
+            string password = TxtPass.Text;
+            if (MainClass.IsValidUser(TxtUser.Text, TxtPass.Text, userType))
             {
-                MessageBox.Show("Hatali kullanici adi veya sifre!");
-            }
-            else
-            {
+
+                MessageBox.Show($"Hoşgeldiniz, {MainClass.USER}");
                 this.Hide();
                 PersonelMenu frm = new PersonelMenu();
                 frm.Show();
+            }
+            else
+            {
+                
+                MessageBox.Show("Hatali kullanici adi veya sifre!");
             }
         }
 

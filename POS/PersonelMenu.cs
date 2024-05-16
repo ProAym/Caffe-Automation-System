@@ -27,11 +27,7 @@ namespace POS
         }
 
 
-        private void PersonelMenu_Load(object sender, EventArgs e)
-        {
-            lblUser.Text = MainClass.USER;
-            _obj = this;
-        }
+        
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
@@ -78,9 +74,7 @@ namespace POS
 
         private void guna2ControlBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 frm = new Form1();
-            frm.Show();
+            Application.Exit();
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
@@ -88,7 +82,7 @@ namespace POS
             if (MessageBox.Show("Çıkış Yapmak istediğinizden Emin Misiniz?", "Çıkış Yap",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
-                PersonelGiris frm = new PersonelGiris();
+                PersonelGiris frm = new PersonelGiris("Personel");
                 frm.Show();
             }
             
@@ -98,6 +92,12 @@ namespace POS
         {
             frmPOS frm = new frmPOS();
             frm.Show();
+        }
+
+        private void PersonelMenu_Load_1(object sender, EventArgs e)
+        {
+            PersonelIsim.Text = MainClass.USER;
+            _obj = this;
         }
     }
 }

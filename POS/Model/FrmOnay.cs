@@ -127,7 +127,7 @@ namespace POS.Model
                 b.Size = new Size(100, 35);
                 b.FillColor = Color.FromArgb(241, 85, 126);
                 b.Margin = new Padding(30, 5, 3, 10);
-                b.Text = "Complete";
+                b.Text = "Ode";
                 b.Tag = dt1.Rows[i]["MainID"].ToString();//Store id
 
 
@@ -160,5 +160,7 @@ namespace POS.Model
         {
             Close();
         }
+
+        
     }
 }

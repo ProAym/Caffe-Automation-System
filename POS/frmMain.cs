@@ -79,21 +79,28 @@ namespace POS
 
 
 
-        private void btnSetings_Click(object sender, EventArgs e)
-        {
-            frmPOS frm = new frmPOS();
-            frm.Show();
-        }
+        
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Çıkış Yapmak istediğinizden Emin Misiniz?", "Çıkış Yap", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
-                Form1 frm = new Form1();
+                Form1 frm = new Form1("Yonetici");
                 frm.Show();
             }
 
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnOdeme_Click(object sender, EventArgs e)
+        {
+            frmPOS frm = new frmPOS();
+            frm.Show();
         }
     }
 

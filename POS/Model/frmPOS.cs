@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace POS.Model
 {
@@ -197,134 +198,156 @@ namespace POS.Model
         private void btnTakeAway_Click_1(object sender, EventArgs e)
         {
             OrderType = "take Away";
-            lblTable.Text = "";
-            lblWaiter.Text = "";
-            lblTable.Visible = false;
-            lblWaiter.Visible = false;
-        }
-
-        private void BtnDin_Click(object sender, EventArgs e)
-        {
-            OrderType = "Din in";
             FrmSiparisSelect frm = new FrmSiparisSelect();
             MainClass.BlurBackground(frm);
 
-            if (frm.Siparis != "")
+            if (!string.IsNullOrEmpty(frm.Siparis))
             {
                 lblTable.Text = frm.Siparis;
                 lblTable.Visible = true;
-
-
             }
             else
             {
                 lblTable.Text = "";
                 lblTable.Visible = false;
-
-
             }
-
 
             FrmPersonelSecme frm1 = new FrmPersonelSecme();
             MainClass.BlurBackground(frm1);
 
-            if(frm1.PersonelAd != "")
+            if (!string.IsNullOrEmpty(frm1.PersonelAd))
             {
                 lblWaiter.Text = frm1.PersonelAd;
                 lblWaiter.Visible = true;
-
             }
             else
             {
                 lblWaiter.Text = "";
                 lblWaiter.Visible = false;
+            }
+            
+        }
 
+        private void BtnDin_Click(object sender, EventArgs e)
+        {
+            // Check if the basket is empty
+            if (guna2DataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Lütfen devam etmeden önce sepete ürün ekleyin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            OrderType = "Din in";
+            FrmSiparisSelect frm = new FrmSiparisSelect();
+            MainClass.BlurBackground(frm);
+
+            if (!string.IsNullOrEmpty(frm.Siparis))
+            {
+                lblTable.Text = frm.Siparis;
+                lblTable.Visible = true;
+            }
+            else
+            {
+                lblTable.Text = "";
+                lblTable.Visible = false;
+            }
+
+            FrmPersonelSecme frm1 = new FrmPersonelSecme();
+            MainClass.BlurBackground(frm1);
+
+            if (!string.IsNullOrEmpty(frm1.PersonelAd))
+            {
+                lblWaiter.Text = frm1.PersonelAd;
+                lblWaiter.Visible = true;
+            }
+            else
+            {
+                lblWaiter.Text = "";
+                lblWaiter.Visible = false;
             }
         }
 
-        private void BtnKOT_Click(object sender, EventArgs e)
+
+        private void BtnBeklet_Click_1(object sender, EventArgs e)
         {
             
-           
-                string qry1 = ""; //Main table
-                string qry2 = ""; //Detail table
+           // Order type is selected
+            if (string.IsNullOrEmpty(OrderType))
+            {
+                MessageBox.Show("Lütfen devam etmeden önce bir sipariş türü seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                int detailID = 0;
+            string qry1 = ""; // Ana tablo
+            string qry2 = ""; // Detay tablosu
 
-                if (MainID == 0)//insert
+            int detailID = 0;
+
+            if (MainID == 0) // ekle
+            {
+                qry1 = @"Insert into tblMain Values(@aDate, @aTime, @Siparis, @PersonelAd,
+                         @status, @orderType, @total, @received, @change);
+                         Select SCOPE_IDENTITY()"; // BU SATIR EN SON EKLENEN ID DEĞERİNİ GETİRECEK
+            }
+            else // Güncelle
+            {
+                qry1 = @"Update tblMain Set status = @status, total = @total, received = @received, change = @change where MainID = @ID";
+            }
+
+            SqlCommand cmd = new SqlCommand(qry1, MainClass.con);
+            cmd.Parameters.AddWithValue("@ID", MainID);
+            cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
+            cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
+            cmd.Parameters.AddWithValue("@Siparis", lblTable.Text);
+            cmd.Parameters.AddWithValue("@PersonelAd", lblWaiter.Text);
+            cmd.Parameters.AddWithValue("@status", "Hold");
+            cmd.Parameters.AddWithValue("@orderType", OrderType);
+            cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text));
+            cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+
+            if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+            if (MainID == 0) { MainID = Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
+            if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                detailID = Convert.ToInt32(row.Cells["dgvid"].Value);
+
+                if (detailID == 0) // Ekle
                 {
-                    qry1 = @"Insert into tblMain Values(@aDate, @aTime,@Siparis, @PersonelAd,
-                                    @status,@orderType,@total, @received,@change);
-                                                   Select SCOPE_IDENTITY() ";// THIS LINE WILL GET THE RECENT ADD ID VALUE
+                    qry2 = @"Insert into tblDetails Values (@MainID, @proID, @qty, @fiyat, @Toplam)";
                 }
-                else// Update
+                else // Güncelle
                 {
-                    qry1 = @"Update tblMain Set status = @status,total = @total, received = @received,change =@change where MainID = @ID";
+                    qry2 = @"Update tblDetails Set proID = @proID, qty = @qty, fiyat = @fiyat, Toplam = @Toplam
+                     where DetailsID = @ID";
                 }
-                
-                Hashtable ht = new Hashtable();
 
-                SqlCommand cmd = new SqlCommand(qry1, MainClass.con);
-                cmd.Parameters.AddWithValue("@ID", MainID);
-                cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
-                cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
-                cmd.Parameters.AddWithValue("@Siparis", lblTable.Text);
-                cmd.Parameters.AddWithValue("@PersonelAd", lblWaiter.Text);
-                cmd.Parameters.AddWithValue("@status", "Pending");
-                cmd.Parameters.AddWithValue("@orderType", OrderType);
-                cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text));
-                cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
-                cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+                SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
+                cmd2.Parameters.AddWithValue("@ID", detailID);
+                cmd2.Parameters.AddWithValue("@MainID", MainID);
+                cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvProID"].Value));
+                cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
+                cmd2.Parameters.AddWithValue("@fiyat", Convert.ToDouble(row.Cells["dgvPrice"].Value));
+                cmd2.Parameters.AddWithValue("@Toplam", Convert.ToDouble(row.Cells["dgvAmount"].Value));
 
                 if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
-                if (MainID == 0) { MainID = Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
+                cmd2.ExecuteNonQuery();
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
-            
-                
+            }
 
-
-                foreach (DataGridViewRow row in guna2DataGridView1.Rows)
-                {
-                    detailID = Convert.ToInt32(row.Cells["dgvid"].Value);
-
-                    if (detailID == 0)//Insert
-                    {
-                        qry2 = @"Insert into tblDetails Values (@MainID,@proID,@qty,@fiyat,@Toplam)";
-                    }
-                    else//Update
-                    {
-                        qry2 = @"Update  tblDetails Set proID = @proID , qty = @qty, fiyat = @fiyat, Toplam = @Toplam
-                            where DetailsID = @ID";
-
-                    }
-                    SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
-                    cmd2.Parameters.AddWithValue("@ID", detailID);
-                    cmd2.Parameters.AddWithValue("@MainID", MainID);
-                    cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvProID"].Value));
-                    cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvQty"].Value));
-                    cmd2.Parameters.AddWithValue("@fiyat", Convert.ToDouble(row.Cells["dgvPrice"].Value));
-                    cmd2.Parameters.AddWithValue("@Toplam", Convert.ToDouble(row.Cells["dgvAmount"].Value));
-
-
-                    if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
-                    cmd2.ExecuteNonQuery();
-                    if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
-
-
-
-                }
-                MessageBox.Show("Basariyla Kaydedildi", "Uyari", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MainID = 0;
-                detailID = 0;
-                guna2DataGridView1.Rows.Clear();
-                // Yeni siparis icin
-                lblTable.Text = "";
-                lblWaiter.Text = "";
-                lblTable.Visible = false;
-                lblWaiter.Visible = false;
-                MainID = 0;
-                lblTotal.Text = "00,00";
-           
+            MessageBox.Show("Başarıyla kaydedildi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MainID = 0;
+            detailID = 0;
+            guna2DataGridView1.Rows.Clear();
+            // Yeni sipariş için
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            MainID = 0;
+            lblTotal.Text = "00,00";
            
             
         }
@@ -335,9 +358,86 @@ namespace POS.Model
             MainClass.BlurBackground(frm);
         }
 
+        public int id = 0;
         private void btnBill_Click(object sender, EventArgs e)
         {
-            MainClass.BlurBackground(new FaturaListeleri());
+            FaturaListeleri frm = new FaturaListeleri();
+            MainClass.BlurBackground(frm);
+
+            if(frm.MainID > 0)
+            {
+                id = frm.MainID;
+                MainID = frm.MainID;
+                LoadEntries();
+            }
+        }
+
+        private void LoadEntries()
+        {
+            string qry3 = @"SELECT * FROM tblMain m
+                INNER JOIN tblDetails d ON m.MainID = d.MainID
+                INNER JOIN Urunler p ON p.uID = d.proID
+                WHERE m.MainID = " + id +"";
+
+            SqlCommand cmd3 = new SqlCommand(qry3, MainClass.con);
+            DataTable dt3 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd3);
+            da2.Fill(dt3);
+
+
+            if (dt3.Rows[0]["ordertype"].ToString()== "Take Away")
+            {
+                btnTakeAway.Checked = true;
+                lblWaiter.Visible = false;
+                lblTable.Visible = false;
+            }
+            else
+            {
+                BtnDin.Checked = true;
+                lblWaiter.Visible = true;
+                lblTable.Visible = true;
+                
+            }
+
+
+            guna2DataGridView1.Rows.Clear();
+            foreach (DataRow item in dt3.Rows)
+            {
+                lblTable.Text = item["Siparisid"].ToString();
+                lblWaiter.Text = item["PersonelAd"].ToString();
+
+
+                string detailid = item["DetailsID"].ToString();
+                string proName = item["uAd"].ToString();
+                string proid = item["proID"].ToString();
+                string qty = item["qty"].ToString();
+                string price = item["fiyat"].ToString();
+                string amount = item["Toplam"].ToString();
+
+                object[] obj = { 0, detailid, proid,proName, qty, price, amount };
+                guna2DataGridView1.Rows.Add(obj);
+
+            }
+            GetTotal();
+        }
+
+        private void btnOdeme_Click(object sender, EventArgs e)
+        {
+            FrmOdemeAl frm = new FrmOdemeAl();
+            frm.MainID = id;
+            frm.amt = Convert.ToDouble(lblTotal.Text);
+            MainClass.BlurBackground(frm);
+
+            
+            MainID = 0;
+            guna2DataGridView1.Rows.Clear();
+            // Yeni sipariş için
+            lblTable.Text = "";
+            lblWaiter.Text = "";
+            lblTable.Visible = false;
+            lblWaiter.Visible = false;
+            MainID = 0;
+            lblTotal.Text = "00,00";
         }
     }
 }

@@ -25,6 +25,7 @@ namespace POS.Model
 
         private void frmUrunAdd_Load(object sender, EventArgs e)
         {
+            
             string qry = "Select catID 'id', catName 'name' from category ";
 
             MainClass.CBFill(qry, cbcat);
@@ -55,36 +56,44 @@ namespace POS.Model
 
         public override void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                txtPrice.Text == "" ||
+                string.IsNullOrWhiteSpace(cbcat.Text) ||
+                string.IsNullOrEmpty(filePath))
+            {
+                MessageBox.Show("Lütfen tüm alanları doldurun.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method without proceeding further
+            }
+
             string qry = "";
 
-            if (id == 0)//insert
+            if (id == 0) // Insert
             {
-                qry = "Insert into Urunler Values(@Name, @Price, @cat,@image)";
+                qry = "Insert into Urunler Values(@Name, @Price, @cat, @image)";
             }
-            else// Update
+            else // Update
             {
-                qry = "Update Urunler  Set uAd= @Name, uFiyat = @Price, kategoriID = @cat,uImage = @image  where uID = @id ";
+                qry = "Update Urunler Set uAd = @Name, uFiyat = @Price, kategoriID = @cat, uImage = @image where uID = @id";
             }
-            //For image
 
+            // Convert image to byte array
             Image temp = new Bitmap(txtImage.Image);
             MemoryStream ms = new MemoryStream();
             temp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            imageByteArray = ms.ToArray();
+            byte[] imageByteArray = ms.ToArray();
 
-            
+            // Hashtable for parameters
             Hashtable ht = new Hashtable();
             ht.Add("@id", id);
             ht.Add("@Name", txtName.Text);
             ht.Add("@Price", txtPrice.Text);
-            ht.Add("@cat",  Convert.ToInt32(cbcat.SelectedValue));
+            ht.Add("@cat", Convert.ToInt32(cbcat.SelectedValue));
             ht.Add("@image", imageByteArray);
 
-
-
+            // Execute SQL query
             if (MainClass.SQL(qry, ht) > 0)
             {
-                MessageBox.Show("Bşarıyla Kaydedildi...");
+                MessageBox.Show("Başarıyla Kaydedildi...");
                 id = 0;
                 cID = 0;
                 txtName.Text = "";
@@ -95,6 +104,7 @@ namespace POS.Model
                 txtName.Focus();
             }
         }
+
 
         private void ForUpdateLoadData()
         {

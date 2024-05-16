@@ -60,15 +60,22 @@ namespace POS.View
             }
             if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvdel") 
             {
-                int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                string qry = "Delete from category where catID= " + id + "";
-                Hashtable ht = new Hashtable();
-                MainClass.SQL(qry, ht);
 
-                MessageBox.Show("başarıyla Silindi");
-                GetData();
+                if(MessageBox.Show("Silmek istediğinizden Emin Misiniz?", "Kategori Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                {
+                    int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                    string qry = "Delete from category where catID= " + id + "";
+                    Hashtable ht = new Hashtable();
+                    MainClass.SQL(qry, ht);
+
+                    MessageBox.Show("başarıyla Silindi");
+                    GetData();
+                }
+                
             }
 
         }
+
+        
     }
 }

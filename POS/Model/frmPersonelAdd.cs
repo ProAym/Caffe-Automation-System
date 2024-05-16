@@ -31,11 +31,11 @@ namespace POS.Model
 
             if (id == 0)//insert
             {
-                qry = "Insert into Personel Values(@Name, @Phone, @Role,@tckn)";
+                qry = "Insert into Personel Values(@Name, @Phone, @Role,@tckn,@sifre)";
             }
             else// Update
             {
-                qry = "Update Personel  Set pAd= @Name, pTelefon = @Phone, pRol = @Role,TCKN = @tckn  where PersonelID = @id ";
+                qry = "Update Personel  Set pAd= @Name, pTelefon = @Phone, pRol = @Role,TCKN = @tckn, pSifre= @sifre where PersonelID = @id ";
             }
 
             Hashtable ht = new Hashtable();
@@ -44,18 +44,22 @@ namespace POS.Model
             ht.Add("@Phone", txtPhone.Text);
             ht.Add("@Role", cbRole.Text);
             ht.Add("@tckn", txtTCKN.Text);
+            ht.Add("@sifre", TxtSifre.Text);
 
 
             if (MainClass.SQL(qry, ht) > 0)
             {
-                MessageBox.Show("Bşarıyla Kaydedildi...");
+                MessageBox.Show("Bşarıyla Eklendi...");
                 id = 0;
                 txtName.Text = "";
                 txtPhone.Text = "";
                 cbRole.SelectedIndex = -1;
                 txtTCKN.Text = "";
+                TxtSifre.Text = "";
                 txtName.Focus();
             }
         }
+
+        
     }
 }

@@ -73,13 +73,13 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(35, 160);
+            this.label2.Location = new System.Drawing.Point(35, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 18);
+            this.label2.Size = new System.Drawing.Size(45, 21);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Sifre";
+            this.label2.Text = "Şifre:";
             // 
             // TxtPass
             // 
@@ -96,7 +96,7 @@
             this.TxtPass.FocusedState.Parent = this.TxtPass;
             this.TxtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtPass.HoverState.Parent = this.TxtPass;
-            this.TxtPass.Location = new System.Drawing.Point(38, 183);
+            this.TxtPass.Location = new System.Drawing.Point(39, 187);
             this.TxtPass.Margin = new System.Windows.Forms.Padding(5);
             this.TxtPass.Name = "TxtPass";
             this.TxtPass.PasswordChar = '\0';
@@ -122,7 +122,7 @@
             this.TxtUser.FocusedState.Parent = this.TxtUser;
             this.TxtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtUser.HoverState.Parent = this.TxtUser;
-            this.TxtUser.Location = new System.Drawing.Point(38, 101);
+            this.TxtUser.Location = new System.Drawing.Point(39, 104);
             this.TxtUser.Margin = new System.Windows.Forms.Padding(4);
             this.TxtUser.Name = "TxtUser";
             this.TxtUser.PasswordChar = '\0';
@@ -136,23 +136,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 80);
+            this.label1.Location = new System.Drawing.Point(35, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 18);
+            this.label1.Size = new System.Drawing.Size(102, 21);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Kullanci Adi";
+            this.label1.Text = "TC Kimlik No:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(61, 23);
+            this.label3.Location = new System.Drawing.Point(118, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 18);
+            this.label3.Size = new System.Drawing.Size(119, 23);
             this.label3.TabIndex = 11;
             this.label3.Text = "Personel Girişi";
             // 
@@ -176,6 +176,7 @@
             // 
             // PersonelGiris
             // 
+            this.AcceptButton = this.BtnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::POS.Properties.Resources.WhatsApp_Image_2024_05_05_at_18_21_25_6c35e4da;

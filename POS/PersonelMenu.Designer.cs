@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+        
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -34,7 +34,7 @@
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.BtnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.PersonelIsim = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -118,7 +118,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(63)))), ((int)(((byte)(25)))));
-            this.guna2Panel4.Controls.Add(this.label3);
+            this.guna2Panel4.Controls.Add(this.PersonelIsim);
             this.guna2Panel4.Controls.Add(this.guna2ControlBox1);
             this.guna2Panel4.Controls.Add(this.guna2ControlBox2);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -129,16 +129,16 @@
             this.guna2Panel4.Size = new System.Drawing.Size(1200, 53);
             this.guna2Panel4.TabIndex = 2;
             // 
-            // label3
+            // PersonelIsim
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "label2";
+            this.PersonelIsim.AutoSize = true;
+            this.PersonelIsim.BackColor = System.Drawing.Color.Transparent;
+            this.PersonelIsim.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonelIsim.Location = new System.Drawing.Point(6, 24);
+            this.PersonelIsim.Name = "PersonelIsim";
+            this.PersonelIsim.Size = new System.Drawing.Size(52, 21);
+            this.PersonelIsim.TabIndex = 1;
+            this.PersonelIsim.Text = "label2";
             // 
             // guna2ControlBox1
             // 
@@ -589,6 +589,7 @@
             this.Name = "PersonelMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.PersonelMenu_Load_1);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
@@ -628,7 +629,7 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label PersonelIsim;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
