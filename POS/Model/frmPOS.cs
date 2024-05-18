@@ -1,18 +1,11 @@
 ﻿using Guna.UI2.WinForms;
+using POS.Raporlar;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace POS.Model
 {
@@ -25,11 +18,11 @@ namespace POS.Model
 
         public int MainID = 0;
         public string OrderType;
+
         private void frmPOS_Load(object sender, EventArgs e)
         {
             guna2DataGridView1.BorderStyle = BorderStyle.FixedSingle;
             AddCategory();
-
             ProductPanel.Controls.Clear();
             LoadProducts();
         }
@@ -53,15 +46,15 @@ namespace POS.Model
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    Guna.UI2.WinForms.Guna2Button b = new Guna.UI2.WinForms.Guna2Button();
-                    b.FillColor = Color.FromArgb(50, 55, 89);
-                    b.Size = new Size(197, 53);
-                    b.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-                    b.Text = row["catName"].ToString();
+                    Guna2Button b = new Guna2Button
+                    {
+                        FillColor = Color.FromArgb(50, 55, 89),
+                        Size = new Size(197, 53),
+                        ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton,
+                        Text = row["catName"].ToString()
+                    };
 
-                    // event for click
                     b.Click += new EventHandler(b_Click);
-
                     CategoryPanel.Controls.Add(b);
                 }
             }
@@ -69,8 +62,8 @@ namespace POS.Model
 
         private void b_Click(object sender, EventArgs e)
         {
-            Guna.UI2.WinForms.Guna2Button b = (Guna.UI2.WinForms.Guna2Button)sender;
-            if(b.Text == "Tum Kategoriler")
+            Guna2Button b = (Guna2Button)sender;
+            if (b.Text == "Tum Kategoriler")
             {
                 txtSearch.Text = "1";
                 txtSearch.Text = "";
@@ -83,10 +76,9 @@ namespace POS.Model
             }
         }
 
-        private void AddItems(String id,String proID, String name, String cat, String price, Image pImage)
+        private void AddItems(string id, string proID, string name, string cat, string price, Image pImage)
         {
-            int parsedPrice;
-            if (!int.TryParse(price, out parsedPrice))
+            if (!int.TryParse(price, out int parsedPrice))
             {
                 return;
             }
@@ -107,14 +99,12 @@ namespace POS.Model
                 var wdg = (ucProduct)ss;
                 bool productFound = false;
 
-                foreach (DataGridViewRow Item in guna2DataGridView1.Rows)
+                foreach (DataGridViewRow item in guna2DataGridView1.Rows)
                 {
-                    if (Convert.ToInt32(Item.Cells["dgvProID"].Value) == wdg.id)
+                    if (Convert.ToInt32(item.Cells["dgvProID"].Value) == wdg.id)
                     {
-                        // Update quantity and total amount for existing product
-                        Item.Cells["dgvQty"].Value = int.Parse(Item.Cells["dgvQty"].Value.ToString()) + 1;
-                        Item.Cells["dgvAmount"].Value = int.Parse(Item.Cells["dgvQty"].Value.ToString()) * wdg.PPrice;
-
+                        item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) + 1;
+                        item.Cells["dgvAmount"].Value = int.Parse(item.Cells["dgvQty"].Value.ToString()) * wdg.PPrice;
                         productFound = true;
                         break;
                     }
@@ -122,14 +112,11 @@ namespace POS.Model
 
                 if (!productFound)
                 {
-                    // Add a new row for the product if it's not already in the DataGridView
                     guna2DataGridView1.Rows.Add(new object[] { 0, 0, wdg.id, wdg.PName, 1, wdg.PPrice, wdg.PPrice * 1 });
                 }
 
-                // Update the total amount
                 GetTotal();
             };
-
         }
 
         private void LoadProducts()
@@ -142,10 +129,8 @@ namespace POS.Model
 
             foreach (DataRow item in dt.Rows)
             {
-                Byte[] imagearray = (byte[])item["uImage"];
-                Byte[] imagebytearray = imagearray;
-
-                AddItems("0",item["uID"].ToString(), item["uAd"].ToString(), item["catName"].ToString(),
+                byte[] imagearray = (byte[])item["uImage"];
+                AddItems("0", item["uID"].ToString(), item["uAd"].ToString(), item["catName"].ToString(),
                     item["uFiyat"].ToString(), Image.FromStream(new MemoryStream(imagearray)));
             }
         }
@@ -161,14 +146,11 @@ namespace POS.Model
 
         private void guna2DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //Sıralama düzenlemesi
             int count = 0;
-
             foreach (DataGridViewRow row in guna2DataGridView1.Rows)
             {
                 count++;
                 row.Cells[0].Value = count;
-
             }
         }
 
@@ -180,57 +162,22 @@ namespace POS.Model
             {
                 tot += double.Parse(item.Cells["dgvAmount"].Value.ToString());
             }
-
             lblTotal.Text = tot.ToString("N2");
         }
 
         private void BtnYeni_Click_1(object sender, EventArgs e)
         {
-            lblTable.Text = "";
-            lblWaiter.Text = "";
-            lblTable.Visible = false;
-            lblWaiter.Visible = false;
-            guna2DataGridView1.Rows.Clear();
-            MainID = 0;
-            lblTotal.Text = "00,0";
+            ResetOrderForm();
         }
 
         private void btnTakeAway_Click_1(object sender, EventArgs e)
         {
-            OrderType = "take Away";
-            FrmSiparisSelect frm = new FrmSiparisSelect();
-            MainClass.BlurBackground(frm);
-
-            if (!string.IsNullOrEmpty(frm.Siparis))
-            {
-                lblTable.Text = frm.Siparis;
-                lblTable.Visible = true;
-            }
-            else
-            {
-                lblTable.Text = "";
-                lblTable.Visible = false;
-            }
-
-            FrmPersonelSecme frm1 = new FrmPersonelSecme();
-            MainClass.BlurBackground(frm1);
-
-            if (!string.IsNullOrEmpty(frm1.PersonelAd))
-            {
-                lblWaiter.Text = frm1.PersonelAd;
-                lblWaiter.Visible = true;
-            }
-            else
-            {
-                lblWaiter.Text = "";
-                lblWaiter.Visible = false;
-            }
-            
+            OrderType = "Take Away";
+            SetOrderDetails();
         }
 
         private void BtnDin_Click(object sender, EventArgs e)
         {
-            // Check if the basket is empty
             if (guna2DataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("Lütfen devam etmeden önce sepete ürün ekleyin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -238,73 +185,130 @@ namespace POS.Model
             }
 
             OrderType = "Din in";
-            FrmSiparisSelect frm = new FrmSiparisSelect();
-            MainClass.BlurBackground(frm);
-
-            if (!string.IsNullOrEmpty(frm.Siparis))
-            {
-                lblTable.Text = frm.Siparis;
-                lblTable.Visible = true;
-            }
-            else
-            {
-                lblTable.Text = "";
-                lblTable.Visible = false;
-            }
-
-            FrmPersonelSecme frm1 = new FrmPersonelSecme();
-            MainClass.BlurBackground(frm1);
-
-            if (!string.IsNullOrEmpty(frm1.PersonelAd))
-            {
-                lblWaiter.Text = frm1.PersonelAd;
-                lblWaiter.Visible = true;
-            }
-            else
-            {
-                lblWaiter.Text = "";
-                lblWaiter.Visible = false;
-            }
+            SetOrderDetails();
         }
-
 
         private void BtnBeklet_Click_1(object sender, EventArgs e)
         {
-            
-           // Order type is selected
             if (string.IsNullOrEmpty(OrderType))
             {
                 MessageBox.Show("Lütfen devam etmeden önce bir sipariş türü seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            string qry1 = ""; // Ana tablo
-            string qry2 = ""; // Detay tablosu
+            SaveOrder();
+            MessageBox.Show("Başarıyla kaydedildi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ResetOrderForm();
+        }
 
+        public int id = 0;
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            FaturaListeleri frm = new FaturaListeleri();
+            MainClass.BlurBackground(frm);
+
+            if (frm.MainID > 0)
+            {
+                id = frm.MainID;
+                MainID = frm.MainID;
+                LoadEntries();
+                PrintBill();
+            }
+        }
+
+        private void LoadEntries()
+        {
+            string qry = @"SELECT * FROM tblMain m
+                INNER JOIN tblDetails d ON m.MainID = d.MainID
+                INNER JOIN Urunler p ON p.uID = d.proID
+                WHERE m.MainID = " + id;
+
+            SqlCommand cmd = new SqlCommand(qry, MainClass.con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                guna2DataGridView1.Rows.Clear();
+                foreach (DataRow item in dt.Rows)
+                {
+                    guna2DataGridView1.Rows.Add(new object[]
+                    {
+                        0,
+                        item["DetailsID"],
+                        item["proID"],
+                        item["uAd"],
+                        item["qty"],
+                        item["fiyat"],
+                        item["Toplam"]
+                    });
+                }
+
+                lblTable.Text = dt.Rows[0]["SiparisId"].ToString();
+                lblWaiter.Text = dt.Rows[0]["PersonelAd"].ToString();
+                lblTotal.Text = dt.Rows[0]["total"].ToString();
+
+                lblTable.Visible = true;
+                lblWaiter.Visible = true;
+                GetTotal();
+            }
+        }
+
+        private void btnOdeme_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(OrderType))
+            {
+                MessageBox.Show("Lütfen devam etmeden önce bir sipariş türü seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            SaveOrder();
+
+            FrmOdemeAl frm = new FrmOdemeAl
+            {
+                MainID = MainID,
+                amt = Convert.ToDouble(lblTotal.Text)
+            };
+            MainClass.BlurBackground(frm);
+
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                UpdateOrderStatus("Ödendi");
+                ResetOrderForm();
+                MessageBox.Show("Ödeme başarıyla alındı ve sipariş kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void SaveOrder()
+        {
+            string qry1;
+            string qry2;
             int detailID = 0;
 
-            if (MainID == 0) // ekle
+            if (MainID == 0)
             {
-                qry1 = @"Insert into tblMain Values(@aDate, @aTime, @Siparis, @PersonelAd,
-                         @status, @orderType, @total, @received, @change);
-                         Select SCOPE_IDENTITY()"; // BU SATIR EN SON EKLENEN ID DEĞERİNİ GETİRECEK
+                qry1 = @"Insert into tblMain (aDate, Time, SiparisId, PersonelAd, status, orderType, total, received, change)
+                         Values (@aDate, @aTime, @Siparis, @PersonelAd, @status, @orderType, @total, @received, @change);
+                         Select SCOPE_IDENTITY()";
             }
-            else // Güncelle
+            else
             {
-                qry1 = @"Update tblMain Set status = @status, total = @total, received = @received, change = @change where MainID = @ID";
+                qry1 = @"Update tblMain Set status = @status, total = @total, received = @received, change = @change 
+                         where MainID = @ID";
             }
 
             SqlCommand cmd = new SqlCommand(qry1, MainClass.con);
             cmd.Parameters.AddWithValue("@ID", MainID);
-            cmd.Parameters.AddWithValue("@aDate", Convert.ToDateTime(DateTime.Now.Date));
+            cmd.Parameters.AddWithValue("@aDate", DateTime.Today);
             cmd.Parameters.AddWithValue("@aTime", DateTime.Now.ToShortTimeString());
             cmd.Parameters.AddWithValue("@Siparis", lblTable.Text);
             cmd.Parameters.AddWithValue("@PersonelAd", lblWaiter.Text);
             cmd.Parameters.AddWithValue("@status", "Hold");
             cmd.Parameters.AddWithValue("@orderType", OrderType);
             cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text));
-            cmd.Parameters.AddWithValue("@received", Convert.ToDouble(0));
-            cmd.Parameters.AddWithValue("@change", Convert.ToDouble(0));
+            cmd.Parameters.AddWithValue("@received", 0);
+            cmd.Parameters.AddWithValue("@change", 0);
 
             if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
             if (MainID == 0) { MainID = Convert.ToInt32(cmd.ExecuteScalar()); } else { cmd.ExecuteNonQuery(); }
@@ -314,14 +318,14 @@ namespace POS.Model
             {
                 detailID = Convert.ToInt32(row.Cells["dgvid"].Value);
 
-                if (detailID == 0) // Ekle
+                if (detailID == 0)
                 {
-                    qry2 = @"Insert into tblDetails Values (@MainID, @proID, @qty, @fiyat, @Toplam)";
+                    qry2 = @"Insert into tblDetails (MainID, proID, qty, fiyat, Toplam) Values (@MainID, @proID, @qty, @fiyat, @Toplam)";
                 }
-                else // Güncelle
+                else
                 {
                     qry2 = @"Update tblDetails Set proID = @proID, qty = @qty, fiyat = @fiyat, Toplam = @Toplam
-                     where DetailsID = @ID";
+                             where DetailsID = @ID";
                 }
 
                 SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
@@ -336,110 +340,56 @@ namespace POS.Model
                 cmd2.ExecuteNonQuery();
                 if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
             }
+        }
 
-            MessageBox.Show("Başarıyla kaydedildi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void UpdateOrderStatus(string status)
+        {
+            string qry = "Update tblMain Set status = @status where MainID = @ID";
+            SqlCommand cmd = new SqlCommand(qry, MainClass.con);
+            cmd.Parameters.AddWithValue("@ID", MainID);
+            cmd.Parameters.AddWithValue("@status", status);
+
+            if (MainClass.con.State == ConnectionState.Closed) { MainClass.con.Open(); }
+            cmd.ExecuteNonQuery();
+            if (MainClass.con.State == ConnectionState.Open) { MainClass.con.Close(); }
+        }
+
+        private void ResetOrderForm()
+        {
             MainID = 0;
-            detailID = 0;
             guna2DataGridView1.Rows.Clear();
-            // Yeni sipariş için
             lblTable.Text = "";
             lblWaiter.Text = "";
             lblTable.Visible = false;
             lblWaiter.Visible = false;
-            MainID = 0;
             lblTotal.Text = "00,00";
-           
-            
         }
 
-        private void guna2TileButton3_Click(object sender, EventArgs e)
+        private void SetOrderDetails()
         {
-            FrmOnay frm = new FrmOnay();
-            MainClass.BlurBackground(frm);
-        }
+            // Automatically set the Siparis ID to a random value
+            Random random = new Random();
+            int randomSiparisId = random.Next(1000, 9999); // Generates a random number between 1000 and 9999
+            lblTable.Text = randomSiparisId.ToString();
+            lblTable.Visible = true;
 
-        public int id = 0;
-        private void btnBill_Click(object sender, EventArgs e)
-        {
-            FaturaListeleri frm = new FaturaListeleri();
-            MainClass.BlurBackground(frm);
-
-            if(frm.MainID > 0)
+            // Set the name of the logged-in personnel
+            if (!string.IsNullOrEmpty(MainClass.USER))
             {
-                id = frm.MainID;
-                MainID = frm.MainID;
-                LoadEntries();
-            }
-        }
-
-        private void LoadEntries()
-        {
-            string qry3 = @"SELECT * FROM tblMain m
-                INNER JOIN tblDetails d ON m.MainID = d.MainID
-                INNER JOIN Urunler p ON p.uID = d.proID
-                WHERE m.MainID = " + id +"";
-
-            SqlCommand cmd3 = new SqlCommand(qry3, MainClass.con);
-            DataTable dt3 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(cmd3);
-            da2.Fill(dt3);
-
-
-            if (dt3.Rows[0]["ordertype"].ToString()== "Take Away")
-            {
-                btnTakeAway.Checked = true;
-                lblWaiter.Visible = false;
-                lblTable.Visible = false;
+                lblWaiter.Text = MainClass.USER;
+                lblWaiter.Visible = true;
             }
             else
             {
-                BtnDin.Checked = true;
-                lblWaiter.Visible = true;
-                lblTable.Visible = true;
-                
+                lblWaiter.Text = "";
+                lblWaiter.Visible = false;
             }
-
-
-            guna2DataGridView1.Rows.Clear();
-            foreach (DataRow item in dt3.Rows)
-            {
-                lblTable.Text = item["Siparisid"].ToString();
-                lblWaiter.Text = item["PersonelAd"].ToString();
-
-
-                string detailid = item["DetailsID"].ToString();
-                string proName = item["uAd"].ToString();
-                string proid = item["proID"].ToString();
-                string qty = item["qty"].ToString();
-                string price = item["fiyat"].ToString();
-                string amount = item["Toplam"].ToString();
-
-                object[] obj = { 0, detailid, proid,proName, qty, price, amount };
-                guna2DataGridView1.Rows.Add(obj);
-
-            }
-            GetTotal();
         }
 
-        private void btnOdeme_Click(object sender, EventArgs e)
+        private void PrintBill()
         {
-            FrmOdemeAl frm = new FrmOdemeAl();
-            frm.MainID = id;
-            frm.amt = Convert.ToDouble(lblTotal.Text);
-            MainClass.BlurBackground(frm);
-
-            
-            MainID = 0;
-            guna2DataGridView1.Rows.Clear();
-            // Yeni sipariş için
-            lblTable.Text = "";
-            lblWaiter.Text = "";
-            lblTable.Visible = false;
-            lblWaiter.Visible = false;
-            MainID = 0;
-            lblTotal.Text = "00,00";
+            FisYazdir fisForm = new FisYazdir(MainID);
+            fisForm.ShowDialog();
         }
     }
 }
- 
-

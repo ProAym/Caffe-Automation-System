@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using POS.Raporlar;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,8 +28,8 @@ namespace POS.Model
         }
         private void LoadData()
         {
-            string qry = @" select MainID,SiparisId, PersonelAd,orderType, status,total From tblMain
-                                where status <> 'Pending'";
+            string qry = @"select MainID, SiparisId, PersonelAd, orderType, status, total From tblMain
+                           where status <> 'Pending'";
             ListBox lb = new ListBox();
             lb.Items.Add(dgvid);
             lb.Items.Add(dgvtable);
@@ -35,21 +38,17 @@ namespace POS.Model
             lb.Items.Add(dgvStatus);
             lb.Items.Add(dgvTotal);
 
-
-
             MainClass.LoadData(qry, guna2DataGridView1, lb);
         }
 
         private void guna2DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //Sıralama düzenlemesi
+            // Sıralama düzenlemesi
             int count = 0;
-
             foreach (DataGridViewRow row in guna2DataGridView1.Rows)
             {
                 count++;
                 row.Cells[0].Value = count;
-
             }
         }
 
@@ -57,20 +56,17 @@ namespace POS.Model
         {
             if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvedit")
             {
-                
                 MainID = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
                 this.Close();
-                
-                
             }
 
             if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvdel")
             {
-                //print bill
+                // Print bill
+                MainID = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                var fisYazdirForm = new FisYazdir(MainID);
+                fisYazdirForm.Show();
             }
-
-
-
         }
 
         private void BtnExit_Click(object sender, EventArgs e)

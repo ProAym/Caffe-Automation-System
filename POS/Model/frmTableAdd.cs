@@ -49,5 +49,7 @@ namespace POS.Model
                 txtName.Focus();
             }
         }
+
+        
     }
 }

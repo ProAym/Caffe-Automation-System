@@ -183,6 +183,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Edit {
+            get {
+                object obj = ResourceManager.GetObject("Edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap g {
             get {
                 object obj = ResourceManager.GetObject("g", resourceCulture);
@@ -286,16 +296,6 @@ namespace POS.Properties {
         internal static System.Drawing.Bitmap icons8_dog_house_501 {
             get {
                 object obj = ResourceManager.GetObject("icons8-dog-house-501", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_edit_90 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-edit-90", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

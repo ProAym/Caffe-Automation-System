@@ -244,7 +244,7 @@
             this.dgvedit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvedit.FillWeight = 50F;
             this.dgvedit.HeaderText = "";
-            this.dgvedit.Image = global::POS.Properties.Resources.icons8_edit_90;
+            this.dgvedit.Image = global::POS.Properties.Resources.Edit;
             this.dgvedit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dgvedit.MinimumWidth = 50;
             this.dgvedit.Name = "dgvedit";

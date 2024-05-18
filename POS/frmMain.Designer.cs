@@ -37,15 +37,15 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.BtnOdeme = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.Raporlar = new Guna.UI2.WinForms.Guna2Button();
             this.btnStock = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaff = new Guna.UI2.WinForms.Guna2Button();
-            this.btnTable = new Guna.UI2.WinForms.Guna2Button();
             this.btnProduct = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategorie = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -118,10 +118,10 @@
             this.guna2Panel2.BackgroundImage = global::POS.Properties.Resources.aesthetic_brown_lines_background_scaled;
             this.guna2Panel2.Controls.Add(this.guna2Button5);
             this.guna2Panel2.Controls.Add(this.BtnOdeme);
-            this.guna2Panel2.Controls.Add(this.guna2Button3);
+            this.guna2Panel2.Controls.Add(this.guna2Button1);
+            this.guna2Panel2.Controls.Add(this.Raporlar);
             this.guna2Panel2.Controls.Add(this.btnStock);
             this.guna2Panel2.Controls.Add(this.btnStaff);
-            this.guna2Panel2.Controls.Add(this.btnTable);
             this.guna2Panel2.Controls.Add(this.btnProduct);
             this.guna2Panel2.Controls.Add(this.btnCategorie);
             this.guna2Panel2.Controls.Add(this.btnHome);
@@ -173,7 +173,7 @@
             this.BtnOdeme.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
             this.BtnOdeme.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnOdeme.ImageOffset = new System.Drawing.Point(10, 0);
-            this.BtnOdeme.Location = new System.Drawing.Point(102, 537);
+            this.BtnOdeme.Location = new System.Drawing.Point(102, 480);
             this.BtnOdeme.Name = "BtnOdeme";
             this.BtnOdeme.ShadowDecoration.Parent = this.BtnOdeme;
             this.BtnOdeme.Size = new System.Drawing.Size(239, 51);
@@ -183,31 +183,32 @@
             this.BtnOdeme.TextOffset = new System.Drawing.Point(20, 0);
             this.BtnOdeme.Click += new System.EventHandler(this.BtnOdeme_Click);
             // 
-            // guna2Button3
+            // Raporlar
             // 
-            this.guna2Button3.AutoRoundedCorners = true;
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderRadius = 24;
-            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
-            this.guna2Button3.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
-            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button3.Location = new System.Drawing.Point(102, 594);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(239, 51);
-            this.guna2Button3.TabIndex = 1;
-            this.guna2Button3.Text = "Ayarlar";
-            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.TextOffset = new System.Drawing.Point(20, 0);
+            this.Raporlar.AutoRoundedCorners = true;
+            this.Raporlar.BackColor = System.Drawing.Color.Transparent;
+            this.Raporlar.BorderRadius = 24;
+            this.Raporlar.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.Raporlar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.Raporlar.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
+            this.Raporlar.CheckedState.Parent = this.Raporlar;
+            this.Raporlar.CustomImages.Parent = this.Raporlar;
+            this.Raporlar.FillColor = System.Drawing.Color.Transparent;
+            this.Raporlar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Raporlar.ForeColor = System.Drawing.Color.White;
+            this.Raporlar.HoverState.Parent = this.Raporlar;
+            this.Raporlar.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
+            this.Raporlar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Raporlar.ImageOffset = new System.Drawing.Point(10, 0);
+            this.Raporlar.Location = new System.Drawing.Point(102, 537);
+            this.Raporlar.Name = "Raporlar";
+            this.Raporlar.ShadowDecoration.Parent = this.Raporlar;
+            this.Raporlar.Size = new System.Drawing.Size(239, 51);
+            this.Raporlar.TabIndex = 1;
+            this.Raporlar.Text = "Raporlar";
+            this.Raporlar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Raporlar.TextOffset = new System.Drawing.Point(20, 0);
+            this.Raporlar.Click += new System.EventHandler(this.Raporlar_Click);
             // 
             // btnStock
             // 
@@ -226,7 +227,7 @@
             this.btnStock.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
             this.btnStock.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStock.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnStock.Location = new System.Drawing.Point(102, 480);
+            this.btnStock.Location = new System.Drawing.Point(102, 423);
             this.btnStock.Name = "btnStock";
             this.btnStock.ShadowDecoration.Parent = this.btnStock;
             this.btnStock.Size = new System.Drawing.Size(239, 51);
@@ -253,7 +254,7 @@
             this.btnStaff.Image = global::POS.Properties.Resources.icons8_staff_501;
             this.btnStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStaff.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnStaff.Location = new System.Drawing.Point(102, 423);
+            this.btnStaff.Location = new System.Drawing.Point(102, 366);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.ShadowDecoration.Parent = this.btnStaff;
             this.btnStaff.Size = new System.Drawing.Size(239, 51);
@@ -262,33 +263,6 @@
             this.btnStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStaff.TextOffset = new System.Drawing.Point(20, 0);
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
-            // 
-            // btnTable
-            // 
-            this.btnTable.AutoRoundedCorners = true;
-            this.btnTable.BackColor = System.Drawing.Color.Transparent;
-            this.btnTable.BorderRadius = 24;
-            this.btnTable.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnTable.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
-            this.btnTable.CheckedState.Image = global::POS.Properties.Resources.icons8_table_50__1_;
-            this.btnTable.CheckedState.Parent = this.btnTable;
-            this.btnTable.CustomImages.Parent = this.btnTable;
-            this.btnTable.FillColor = System.Drawing.Color.Transparent;
-            this.btnTable.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnTable.ForeColor = System.Drawing.Color.White;
-            this.btnTable.HoverState.Parent = this.btnTable;
-            this.btnTable.Image = global::POS.Properties.Resources.icons8_table_501;
-            this.btnTable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTable.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnTable.Location = new System.Drawing.Point(102, 366);
-            this.btnTable.Name = "btnTable";
-            this.btnTable.ShadowDecoration.Parent = this.btnTable;
-            this.btnTable.Size = new System.Drawing.Size(239, 51);
-            this.btnTable.TabIndex = 1;
-            this.btnTable.Text = "Siparişler Listesi";
-            this.btnTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTable.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
             // btnProduct
             // 
@@ -394,6 +368,32 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.AutoRoundedCorners = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 24;
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.guna2Button1.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(10, 0);
+            this.guna2Button1.Location = new System.Drawing.Point(102, 594);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(239, 51);
+            this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.Text = "Ayarlar";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.TextOffset = new System.Drawing.Point(20, 0);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -428,14 +428,14 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnStaff;
-        private Guna.UI2.WinForms.Guna2Button btnTable;
         private Guna.UI2.WinForms.Guna2Button btnProduct;
         private Guna.UI2.WinForms.Guna2Button btnCategorie;
         private Guna.UI2.WinForms.Guna2Button btnStock;
         private System.Windows.Forms.Label lblUser;
         private Guna.UI2.WinForms.Guna2Panel CenterPanel;
         private Guna.UI2.WinForms.Guna2Button BtnOdeme;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button Raporlar;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

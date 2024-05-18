@@ -66,10 +66,7 @@ namespace POS
             AddControls(new frmUrunlerView());
         }
 
-        private void btnTable_Click(object sender, EventArgs e)
-        {
-            AddControls(new frmTableView());
-        }
+       
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
@@ -101,6 +98,11 @@ namespace POS
         {
             frmPOS frm = new frmPOS();
             frm.Show();
+        }
+
+        private void Raporlar_Click(object sender, EventArgs e)
+        {
+            AddControls(new RaporlarVıew());
         }
     }
 

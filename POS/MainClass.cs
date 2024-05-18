@@ -18,7 +18,7 @@ namespace POS
         public static readonly string con_string = "Data Source=DESKTOP-7E9QC34;Initial Catalog = RM; Integrated Security = True;";
         public static SqlConnection con = new SqlConnection(con_string);
 
-
+       
         //Method to check User Validation
 
 

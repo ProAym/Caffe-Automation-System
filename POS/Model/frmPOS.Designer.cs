@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.BtnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.BtnYeni = new Guna.UI2.WinForms.Guna2TileButton();
@@ -40,10 +40,11 @@
             this.lblWaiter = new System.Windows.Forms.Label();
             this.lblTable = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.BtnBeklet = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TileButton3 = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnBill = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnOdeme = new Guna.UI2.WinForms.Guna2Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CategoryPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -57,13 +58,11 @@
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.btnOdeme = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -197,6 +196,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Sipariş";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(82, 90);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // BtnBeklet
             // 
             this.BtnBeklet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -216,26 +226,6 @@
             this.BtnBeklet.Text = "Beklet";
             this.BtnBeklet.Click += new System.EventHandler(this.BtnBeklet_Click_1);
             // 
-            // guna2TileButton3
-            // 
-            this.guna2TileButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
-            this.guna2TileButton3.BorderRadius = 10;
-            this.guna2TileButton3.BorderThickness = 2;
-            this.guna2TileButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(63)))), ((int)(((byte)(25)))));
-            this.guna2TileButton3.CheckedState.Parent = this.guna2TileButton3;
-            this.guna2TileButton3.CustomImages.Parent = this.guna2TileButton3;
-            this.guna2TileButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
-            this.guna2TileButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TileButton3.ForeColor = System.Drawing.Color.Black;
-            this.guna2TileButton3.HoverState.Parent = this.guna2TileButton3;
-            this.guna2TileButton3.Location = new System.Drawing.Point(12, 19);
-            this.guna2TileButton3.Name = "guna2TileButton3";
-            this.guna2TileButton3.ShadowDecoration.Parent = this.guna2TileButton3;
-            this.guna2TileButton3.Size = new System.Drawing.Size(164, 69);
-            this.guna2TileButton3.TabIndex = 2;
-            this.guna2TileButton3.Text = "Ödenmeyen Faturalar";
-            this.guna2TileButton3.Click += new System.EventHandler(this.guna2TileButton3_Click);
-            // 
             // btnBill
             // 
             this.btnBill.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
@@ -248,7 +238,7 @@
             this.btnBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.ForeColor = System.Drawing.Color.Black;
             this.btnBill.HoverState.Parent = this.btnBill;
-            this.btnBill.Location = new System.Drawing.Point(182, 19);
+            this.btnBill.Location = new System.Drawing.Point(27, 19);
             this.btnBill.Name = "btnBill";
             this.btnBill.ShadowDecoration.Parent = this.btnBill;
             this.btnBill.Size = new System.Drawing.Size(164, 69);
@@ -263,7 +253,6 @@
             this.guna2Panel1.Controls.Add(this.BtnBeklet);
             this.guna2Panel1.Controls.Add(this.lblTotal);
             this.guna2Panel1.Controls.Add(this.btnBill);
-            this.guna2Panel1.Controls.Add(this.guna2TileButton3);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
@@ -272,6 +261,25 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(1455, 106);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // btnOdeme
+            // 
+            this.btnOdeme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOdeme.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
+            this.btnOdeme.BorderRadius = 10;
+            this.btnOdeme.CheckedState.Parent = this.btnOdeme;
+            this.btnOdeme.CustomImages.Parent = this.btnOdeme;
+            this.btnOdeme.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
+            this.btnOdeme.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnOdeme.ForeColor = System.Drawing.Color.Black;
+            this.btnOdeme.HoverState.Parent = this.btnOdeme;
+            this.btnOdeme.Location = new System.Drawing.Point(1202, 19);
+            this.btnOdeme.Name = "btnOdeme";
+            this.btnOdeme.ShadowDecoration.Parent = this.btnOdeme;
+            this.btnOdeme.Size = new System.Drawing.Size(91, 75);
+            this.btnOdeme.TabIndex = 11;
+            this.btnOdeme.Text = "Ödeme Al";
+            this.btnOdeme.Click += new System.EventHandler(this.btnOdeme_Click);
             // 
             // lblTotal
             // 
@@ -449,25 +457,6 @@
             this.dgvAmount.ReadOnly = true;
             this.dgvAmount.Width = 60;
             // 
-            // btnOdeme
-            // 
-            this.btnOdeme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOdeme.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
-            this.btnOdeme.BorderRadius = 10;
-            this.btnOdeme.CheckedState.Parent = this.btnOdeme;
-            this.btnOdeme.CustomImages.Parent = this.btnOdeme;
-            this.btnOdeme.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
-            this.btnOdeme.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnOdeme.ForeColor = System.Drawing.Color.Black;
-            this.btnOdeme.HoverState.Parent = this.btnOdeme;
-            this.btnOdeme.Location = new System.Drawing.Point(1202, 19);
-            this.btnOdeme.Name = "btnOdeme";
-            this.btnOdeme.ShadowDecoration.Parent = this.btnOdeme;
-            this.btnOdeme.Size = new System.Drawing.Size(91, 75);
-            this.btnOdeme.TabIndex = 11;
-            this.btnOdeme.Text = "Ödeme Al";
-            this.btnOdeme.Click += new System.EventHandler(this.btnOdeme_Click);
-            // 
             // txtSearch
             // 
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -493,17 +482,6 @@
             this.txtSearch.TabIndex = 9;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(82, 90);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // frmPOS
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -523,10 +501,10 @@
             this.Load += new System.EventHandler(this.frmPOS_Load);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -539,7 +517,6 @@
         private Guna.UI2.WinForms.Guna2TileButton btnTakeAway;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TileButton BtnYeni;
-        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton3;
         private Guna.UI2.WinForms.Guna2TileButton btnBill;
         private System.Windows.Forms.Label lblWaiter;
         private System.Windows.Forms.Label lblTable;

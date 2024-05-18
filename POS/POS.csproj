@@ -36,6 +36,30 @@
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\..\Desktop\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -82,35 +106,17 @@
     <Compile Include="Model\FrmOdemeAl.Designer.cs">
       <DependentUpon>FrmOdemeAl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\FrmOnay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Model\FrmOnay.Designer.cs">
-      <DependentUpon>FrmOnay.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\frmPersonelAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\frmPersonelAdd.Designer.cs">
       <DependentUpon>frmPersonelAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\FrmPersonelSecme.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Model\FrmPersonelSecme.Designer.cs">
-      <DependentUpon>FrmPersonelSecme.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\frmPOS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\frmPOS.Designer.cs">
       <DependentUpon>frmPOS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Model\FrmSiparisSelect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Model\FrmSiparisSelect.Designer.cs">
-      <DependentUpon>FrmSiparisSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\frmTableAdd.cs">
       <SubType>Form</SubType>
@@ -150,6 +156,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raporlar\DataSet2.cs">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\FisYazdir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\FisYazdir.Designer.cs">
+      <DependentUpon>FisYazdir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\PersonelRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\PersonelRapor.Designer.cs">
+      <DependentUpon>PersonelRapor.cs</DependentUpon>
+    </Compile>
     <Compile Include="RMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +199,7 @@
     <Compile Include="Secme1Ekran.Designer.cs">
       <DependentUpon>Secme1Ekran.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="View\frmCategoryView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,17 +212,17 @@
     <Compile Include="View\frmPersonelView.Designer.cs">
       <DependentUpon>frmPersonelView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmTableView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmTableView.Designer.cs">
-      <DependentUpon>frmTableView.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\frmUrunlerView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmUrunlerView.Designer.cs">
       <DependentUpon>frmUrunlerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RaporlarVıew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RaporlarVıew.Designer.cs">
+      <DependentUpon>RaporlarVıew.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -212,20 +239,11 @@
     <EmbeddedResource Include="Model\FrmOdemeAl.resx">
       <DependentUpon>FrmOdemeAl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\FrmOnay.resx">
-      <DependentUpon>FrmOnay.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Model\frmPersonelAdd.resx">
       <DependentUpon>frmPersonelAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Model\FrmPersonelSecme.resx">
-      <DependentUpon>FrmPersonelSecme.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Model\frmPOS.resx">
       <DependentUpon>frmPOS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Model\FrmSiparisSelect.resx">
-      <DependentUpon>FrmSiparisSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmTableAdd.resx">
       <DependentUpon>frmTableAdd.cs</DependentUpon>
@@ -255,6 +273,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Raporlar\FisReport.rdlc" />
+    <EmbeddedResource Include="Raporlar\FisYazdir.resx">
+      <DependentUpon>FisYazdir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\PersonelListesiRaporu.rdlc" />
+    <EmbeddedResource Include="Raporlar\PersonelRapor.resx">
+      <DependentUpon>PersonelRapor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SampleAdd.resx">
       <DependentUpon>SampleAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,12 +296,13 @@
     <EmbeddedResource Include="View\frmPersonelView.resx">
       <DependentUpon>frmPersonelView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmTableView.resx">
-      <DependentUpon>frmTableView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\frmUrunlerView.resx">
       <DependentUpon>frmUrunlerView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\RaporlarVıew.resx">
+      <DependentUpon>RaporlarVıew.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -301,6 +328,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Raporlar\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Raporlar\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Raporlar\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Resources\dogWhite.png" />
   </ItemGroup>
   <ItemGroup>
@@ -515,10 +553,22 @@
     <None Include="Resources\icons8-print-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-edit-90.png" />
+    <None Include="Resources\Edit.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Raporlar\" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
