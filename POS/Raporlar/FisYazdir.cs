@@ -2,8 +2,10 @@
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using POS.Model;
 
 namespace POS.Raporlar
 {

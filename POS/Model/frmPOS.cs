@@ -17,7 +17,7 @@ namespace POS.Model
         }
 
         public int MainID = 0;
-        public string OrderType;
+        
 
         private void frmPOS_Load(object sender, EventArgs e)
         {
@@ -25,6 +25,7 @@ namespace POS.Model
             AddCategory();
             ProductPanel.Controls.Clear();
             LoadProducts();
+            SetOrderDetails();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -168,29 +169,15 @@ namespace POS.Model
         private void BtnYeni_Click_1(object sender, EventArgs e)
         {
             ResetOrderForm();
-        }
-
-        private void btnTakeAway_Click_1(object sender, EventArgs e)
-        {
-            OrderType = "Take Away";
             SetOrderDetails();
         }
 
-        private void BtnDin_Click(object sender, EventArgs e)
-        {
-            if (guna2DataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Lütfen devam etmeden önce sepete ürün ekleyin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            OrderType = "Din in";
-            SetOrderDetails();
-        }
+        
+        
 
         private void BtnBeklet_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(OrderType))
+            if (guna2DataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("Lütfen devam etmeden önce bir sipariş türü seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -257,11 +244,7 @@ namespace POS.Model
 
         private void btnOdeme_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(OrderType))
-            {
-                MessageBox.Show("Lütfen devam etmeden önce bir sipariş türü seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+           
 
             SaveOrder();
 
@@ -288,8 +271,8 @@ namespace POS.Model
 
             if (MainID == 0)
             {
-                qry1 = @"Insert into tblMain (aDate, Time, SiparisId, PersonelAd, status, orderType, total, received, change)
-                         Values (@aDate, @aTime, @Siparis, @PersonelAd, @status, @orderType, @total, @received, @change);
+                qry1 = @"Insert into tblMain (aDate, Time, SiparisId, PersonelAd, status, total, received, change)
+                         Values (@aDate, @aTime, @Siparis, @PersonelAd, @status, @total, @received, @change);
                          Select SCOPE_IDENTITY()";
             }
             else
@@ -305,7 +288,7 @@ namespace POS.Model
             cmd.Parameters.AddWithValue("@Siparis", lblTable.Text);
             cmd.Parameters.AddWithValue("@PersonelAd", lblWaiter.Text);
             cmd.Parameters.AddWithValue("@status", "Hold");
-            cmd.Parameters.AddWithValue("@orderType", OrderType);
+            
             cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text));
             cmd.Parameters.AddWithValue("@received", 0);
             cmd.Parameters.AddWithValue("@change", 0);

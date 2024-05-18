@@ -52,7 +52,7 @@ namespace POS
                     if (dt.Rows.Count > 0)
                     {
                         isValid = true;
-                        USER = userType == "Yonetici" ? dt.Rows[0]["Isim"].ToString() : dt.Rows[0]["pAd"].ToString();
+                        USER = userType == "Yonetici" ? $"{dt.Rows[0]["Isim"]}{dt.Rows[0]["SoyIsim"]}" : dt.Rows[0]["pAd"].ToString();
                     }
 
                 }
