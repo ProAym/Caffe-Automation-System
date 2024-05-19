@@ -42,11 +42,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 69);
+            this.label1.Location = new System.Drawing.Point(663, 398);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 21);
+            this.label1.Size = new System.Drawing.Size(99, 19);
             this.label1.TabIndex = 5;
             this.label1.Text = "TC Kimlik No:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -61,12 +61,11 @@
             this.TxtUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtUser.DisabledState.Parent = this.TxtUser;
             this.TxtUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.TxtUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtUser.FocusedState.Parent = this.TxtUser;
             this.TxtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtUser.HoverState.Parent = this.TxtUser;
-            this.TxtUser.Location = new System.Drawing.Point(38, 94);
+            this.TxtUser.Location = new System.Drawing.Point(666, 423);
             this.TxtUser.Margin = new System.Windows.Forms.Padding(4);
             this.TxtUser.Name = "TxtUser";
             this.TxtUser.PasswordChar = '\0';
@@ -87,12 +86,11 @@
             this.TxtPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtPass.DisabledState.Parent = this.TxtPass;
             this.TxtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.TxtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtPass.FocusedState.Parent = this.TxtPass;
             this.TxtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtPass.HoverState.Parent = this.TxtPass;
-            this.TxtPass.Location = new System.Drawing.Point(39, 183);
+            this.TxtPass.Location = new System.Drawing.Point(667, 512);
             this.TxtPass.Margin = new System.Windows.Forms.Padding(5);
             this.TxtPass.Name = "TxtPass";
             this.TxtPass.PasswordChar = '\0';
@@ -106,11 +104,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 157);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(675, 488);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 21);
+            this.label2.Size = new System.Drawing.Size(44, 19);
             this.label2.TabIndex = 6;
             this.label2.Text = "Şifre:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -122,10 +120,10 @@
             this.BtnLogin.CheckedState.Parent = this.BtnLogin;
             this.BtnLogin.CustomImages.Parent = this.BtnLogin;
             this.BtnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.BtnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnLogin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.ForeColor = System.Drawing.Color.Black;
             this.BtnLogin.HoverState.Parent = this.BtnLogin;
-            this.BtnLogin.Location = new System.Drawing.Point(186, 243);
+            this.BtnLogin.Location = new System.Drawing.Point(814, 572);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.ShadowDecoration.Parent = this.BtnLogin;
             this.BtnLogin.Size = new System.Drawing.Size(115, 52);
@@ -139,7 +137,7 @@
             this.BtnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.BtnExit.HoverState.Parent = this.BtnExit;
             this.BtnExit.IconColor = System.Drawing.Color.Black;
-            this.BtnExit.Location = new System.Drawing.Point(307, 23);
+            this.BtnExit.Location = new System.Drawing.Point(1527, 23);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.ShadowDecoration.Parent = this.BtnExit;
             this.BtnExit.Size = new System.Drawing.Size(45, 29);
@@ -167,11 +165,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(122, 23);
+            this.label3.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(700, 316);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 23);
+            this.label3.Size = new System.Drawing.Size(196, 39);
             this.label3.TabIndex = 16;
             this.label3.Text = "Yönetici Girişi";
             // 
@@ -180,8 +178,8 @@
             this.AcceptButton = this.BtnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::POS.Properties.Resources.g;
-            this.ClientSize = new System.Drawing.Size(364, 535);
+            this.BackgroundImage = global::POS.Properties.Resources.Buyukkafefoto1;
+            this.ClientSize = new System.Drawing.Size(1584, 879);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.BtnExit);

@@ -45,7 +45,6 @@
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -69,10 +68,10 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(6, 24);
+            this.lblUser.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold);
+            this.lblUser.Location = new System.Drawing.Point(16, 14);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(52, 21);
+            this.lblUser.Size = new System.Drawing.Size(67, 27);
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "label2";
             // 
@@ -118,7 +117,6 @@
             this.guna2Panel2.BackgroundImage = global::POS.Properties.Resources.aesthetic_brown_lines_background_scaled;
             this.guna2Panel2.Controls.Add(this.guna2Button5);
             this.guna2Panel2.Controls.Add(this.BtnOdeme);
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
             this.guna2Panel2.Controls.Add(this.Raporlar);
             this.guna2Panel2.Controls.Add(this.btnStock);
             this.guna2Panel2.Controls.Add(this.btnStaff);
@@ -143,7 +141,7 @@
             this.guna2Button5.CheckedState.Parent = this.guna2Button5;
             this.guna2Button5.CustomImages.Parent = this.guna2Button5;
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
             this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
@@ -163,22 +161,23 @@
             this.BtnOdeme.BorderRadius = 24;
             this.BtnOdeme.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.BtnOdeme.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
-            this.BtnOdeme.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
+            this.BtnOdeme.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.BtnOdeme.CheckedState.Image = global::POS.Properties.Resources.icons8_pos_50__1_;
             this.BtnOdeme.CheckedState.Parent = this.BtnOdeme;
             this.BtnOdeme.CustomImages.Parent = this.BtnOdeme;
             this.BtnOdeme.FillColor = System.Drawing.Color.Transparent;
-            this.BtnOdeme.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnOdeme.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.BtnOdeme.ForeColor = System.Drawing.Color.White;
             this.BtnOdeme.HoverState.Parent = this.BtnOdeme;
-            this.BtnOdeme.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
+            this.BtnOdeme.Image = global::POS.Properties.Resources.icons8_pos_50;
             this.BtnOdeme.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnOdeme.ImageOffset = new System.Drawing.Point(10, 0);
-            this.BtnOdeme.Location = new System.Drawing.Point(102, 480);
+            this.BtnOdeme.Location = new System.Drawing.Point(116, 480);
             this.BtnOdeme.Name = "BtnOdeme";
             this.BtnOdeme.ShadowDecoration.Parent = this.BtnOdeme;
             this.BtnOdeme.Size = new System.Drawing.Size(239, 51);
             this.BtnOdeme.TabIndex = 1;
-            this.BtnOdeme.Text = "Ödeme";
+            this.BtnOdeme.Text = "Sipariş Alma";
             this.BtnOdeme.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnOdeme.TextOffset = new System.Drawing.Point(20, 0);
             this.BtnOdeme.Click += new System.EventHandler(this.BtnOdeme_Click);
@@ -190,17 +189,18 @@
             this.Raporlar.BorderRadius = 24;
             this.Raporlar.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.Raporlar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
-            this.Raporlar.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
+            this.Raporlar.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.Raporlar.CheckedState.Image = global::POS.Properties.Resources.icons8_reports_64__1_;
             this.Raporlar.CheckedState.Parent = this.Raporlar;
             this.Raporlar.CustomImages.Parent = this.Raporlar;
             this.Raporlar.FillColor = System.Drawing.Color.Transparent;
-            this.Raporlar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Raporlar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.Raporlar.ForeColor = System.Drawing.Color.White;
             this.Raporlar.HoverState.Parent = this.Raporlar;
-            this.Raporlar.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
+            this.Raporlar.Image = global::POS.Properties.Resources.icons8_reports_64;
             this.Raporlar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Raporlar.ImageOffset = new System.Drawing.Point(10, 0);
-            this.Raporlar.Location = new System.Drawing.Point(102, 537);
+            this.Raporlar.Location = new System.Drawing.Point(116, 537);
             this.Raporlar.Name = "Raporlar";
             this.Raporlar.ShadowDecoration.Parent = this.Raporlar;
             this.Raporlar.Size = new System.Drawing.Size(239, 51);
@@ -217,17 +217,18 @@
             this.btnStock.BorderRadius = 24;
             this.btnStock.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnStock.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
-            this.btnStock.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
+            this.btnStock.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnStock.CheckedState.Image = global::POS.Properties.Resources.icons8_stock_50__1_;
             this.btnStock.CheckedState.Parent = this.btnStock;
             this.btnStock.CustomImages.Parent = this.btnStock;
             this.btnStock.FillColor = System.Drawing.Color.Transparent;
-            this.btnStock.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnStock.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnStock.ForeColor = System.Drawing.Color.White;
             this.btnStock.HoverState.Parent = this.btnStock;
-            this.btnStock.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
+            this.btnStock.Image = global::POS.Properties.Resources.icons8_stock_50;
             this.btnStock.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStock.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnStock.Location = new System.Drawing.Point(102, 423);
+            this.btnStock.Location = new System.Drawing.Point(116, 423);
             this.btnStock.Name = "btnStock";
             this.btnStock.ShadowDecoration.Parent = this.btnStock;
             this.btnStock.Size = new System.Drawing.Size(239, 51);
@@ -244,17 +245,18 @@
             this.btnStaff.BorderRadius = 24;
             this.btnStaff.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnStaff.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.btnStaff.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.btnStaff.CheckedState.Image = global::POS.Properties.Resources.icons8_staff_50__1_;
             this.btnStaff.CheckedState.Parent = this.btnStaff;
             this.btnStaff.CustomImages.Parent = this.btnStaff;
             this.btnStaff.FillColor = System.Drawing.Color.Transparent;
-            this.btnStaff.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnStaff.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnStaff.ForeColor = System.Drawing.Color.White;
             this.btnStaff.HoverState.Parent = this.btnStaff;
             this.btnStaff.Image = global::POS.Properties.Resources.icons8_staff_501;
             this.btnStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnStaff.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnStaff.Location = new System.Drawing.Point(102, 366);
+            this.btnStaff.Location = new System.Drawing.Point(116, 366);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.ShadowDecoration.Parent = this.btnStaff;
             this.btnStaff.Size = new System.Drawing.Size(239, 51);
@@ -271,17 +273,18 @@
             this.btnProduct.BorderRadius = 24;
             this.btnProduct.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.btnProduct.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.btnProduct.CheckedState.Image = global::POS.Properties.Resources.icons8_products_50__1_;
             this.btnProduct.CheckedState.Parent = this.btnProduct;
             this.btnProduct.CustomImages.Parent = this.btnProduct;
             this.btnProduct.FillColor = System.Drawing.Color.Transparent;
-            this.btnProduct.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnProduct.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.HoverState.Parent = this.btnProduct;
             this.btnProduct.Image = global::POS.Properties.Resources.icons8_products_501;
             this.btnProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProduct.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnProduct.Location = new System.Drawing.Point(102, 309);
+            this.btnProduct.Location = new System.Drawing.Point(116, 309);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.ShadowDecoration.Parent = this.btnProduct;
             this.btnProduct.Size = new System.Drawing.Size(239, 51);
@@ -298,17 +301,18 @@
             this.btnCategorie.BorderRadius = 24;
             this.btnCategorie.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCategorie.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.btnCategorie.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.btnCategorie.CheckedState.Image = global::POS.Properties.Resources.icons8_medium_priority_50__1_1;
             this.btnCategorie.CheckedState.Parent = this.btnCategorie;
             this.btnCategorie.CustomImages.Parent = this.btnCategorie;
             this.btnCategorie.FillColor = System.Drawing.Color.Transparent;
-            this.btnCategorie.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCategorie.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnCategorie.ForeColor = System.Drawing.Color.White;
             this.btnCategorie.HoverState.Parent = this.btnCategorie;
             this.btnCategorie.Image = global::POS.Properties.Resources.icons8_medium_priority_501;
             this.btnCategorie.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCategorie.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnCategorie.Location = new System.Drawing.Point(102, 252);
+            this.btnCategorie.Location = new System.Drawing.Point(116, 252);
             this.btnCategorie.Name = "btnCategorie";
             this.btnCategorie.ShadowDecoration.Parent = this.btnCategorie;
             this.btnCategorie.Size = new System.Drawing.Size(239, 51);
@@ -325,17 +329,18 @@
             this.btnHome.BorderRadius = 24;
             this.btnHome.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnHome.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.btnHome.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.btnHome.CheckedState.Image = global::POS.Properties.Resources.icons8_dog_house_50__1_1;
             this.btnHome.CheckedState.Parent = this.btnHome;
             this.btnHome.CustomImages.Parent = this.btnHome;
             this.btnHome.FillColor = System.Drawing.Color.Transparent;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHome.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.HoverState.Parent = this.btnHome;
             this.btnHome.Image = global::POS.Properties.Resources.icons8_dog_house_501;
             this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnHome.Location = new System.Drawing.Point(102, 195);
+            this.btnHome.Location = new System.Drawing.Point(116, 195);
             this.btnHome.Name = "btnHome";
             this.btnHome.ShadowDecoration.Parent = this.btnHome;
             this.btnHome.Size = new System.Drawing.Size(239, 51);
@@ -367,32 +372,6 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 24;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
-            this.guna2Button1.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button1.Location = new System.Drawing.Point(102, 594);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(239, 51);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "Ayarlar";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.TextOffset = new System.Drawing.Point(20, 0);
             // 
             // frmMain
             // 
@@ -436,6 +415,5 @@
         private Guna.UI2.WinForms.Guna2Button BtnOdeme;
         private Guna.UI2.WinForms.Guna2Button Raporlar;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

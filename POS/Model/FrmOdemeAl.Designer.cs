@@ -41,6 +41,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnÖde = new Guna.UI2.WinForms.Guna2Button();
             this.cbOrderType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -244,12 +245,22 @@
             "Take Away",
             "Din in"});
             this.cbOrderType.ItemsAppearance.Parent = this.cbOrderType;
-            this.cbOrderType.Location = new System.Drawing.Point(286, 266);
+            this.cbOrderType.Location = new System.Drawing.Point(286, 274);
             this.cbOrderType.Name = "cbOrderType";
             this.cbOrderType.ShadowDecoration.Parent = this.cbOrderType;
-            this.cbOrderType.Size = new System.Drawing.Size(178, 36);
+            this.cbOrderType.Size = new System.Drawing.Size(191, 36);
             this.cbOrderType.TabIndex = 19;
             this.cbOrderType.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(282, 242);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 21);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Take Away/Din İn";
             // 
             // FrmOdemeAl
             // 
@@ -258,6 +269,7 @@
             this.Controls.Add(this.cbOrderType);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.txtChange);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtReceived);
             this.Controls.Add(this.label4);
@@ -296,5 +308,6 @@
         public Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Guna.UI2.WinForms.Guna2Button btnÖde;
         private Guna.UI2.WinForms.Guna2ComboBox cbOrderType;
+        private System.Windows.Forms.Label label3;
     }
 }

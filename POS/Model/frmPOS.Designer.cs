@@ -36,6 +36,8 @@
             this.BtnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.BtnYeni = new Guna.UI2.WinForms.Guna2TileButton();
             this.lblWaiter = new System.Windows.Forms.Label();
+            this.PersonelAd = new System.Windows.Forms.Label();
+            this.SiparisNo = new System.Windows.Forms.Label();
             this.lblTable = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -55,10 +57,10 @@
             this.dgvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvsilme = new System.Windows.Forms.DataGridViewImageColumn();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.SiparisNo = new System.Windows.Forms.Label();
-            this.PersonelAd = new System.Windows.Forms.Label();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -128,6 +130,32 @@
             this.lblWaiter.TabIndex = 1;
             this.lblWaiter.Text = "Personel";
             this.lblWaiter.Visible = false;
+            // 
+            // PersonelAd
+            // 
+            this.PersonelAd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PersonelAd.AutoSize = true;
+            this.PersonelAd.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonelAd.ForeColor = System.Drawing.Color.White;
+            this.PersonelAd.Location = new System.Drawing.Point(952, 59);
+            this.PersonelAd.Name = "PersonelAd";
+            this.PersonelAd.Size = new System.Drawing.Size(133, 30);
+            this.PersonelAd.TabIndex = 1;
+            this.PersonelAd.Text = "Personel Ad:";
+            // 
+            // SiparisNo
+            // 
+            this.SiparisNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SiparisNo.AutoSize = true;
+            this.SiparisNo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SiparisNo.ForeColor = System.Drawing.Color.White;
+            this.SiparisNo.Location = new System.Drawing.Point(952, 29);
+            this.SiparisNo.Name = "SiparisNo";
+            this.SiparisNo.Size = new System.Drawing.Size(116, 30);
+            this.SiparisNo.TabIndex = 1;
+            this.SiparisNo.Text = "Siparis No:";
             // 
             // lblTable
             // 
@@ -311,7 +339,8 @@
             this.dgvName,
             this.dgvQty,
             this.dgvPrice,
-            this.dgvAmount});
+            this.dgvAmount,
+            this.dgvsilme});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,6 +381,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 35;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick_1);
             this.guna2DataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.guna2DataGridView1_CellFormatting);
             // 
             // dgvSno
@@ -415,6 +445,20 @@
             this.dgvAmount.ReadOnly = true;
             this.dgvAmount.Width = 60;
             // 
+            // dgvsilme
+            // 
+            this.dgvsilme.HeaderText = "";
+            this.dgvsilme.Image = global::POS.Properties.Resources.icons8_full_recycle_bin_481;
+            this.dgvsilme.Name = "dgvsilme";
+            this.dgvsilme.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Silme";
+            this.dataGridViewImageColumn1.Image = global::POS.Properties.Resources.icons8_full_recycle_bin_481;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 62;
+            // 
             // txtSearch
             // 
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -429,42 +473,16 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconLeft = global::POS.Properties.Resources.icons8_search_256;
-            this.txtSearch.Location = new System.Drawing.Point(41, 126);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(10, 21, 10, 21);
+            this.txtSearch.Location = new System.Drawing.Point(27, 132);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(12, 27, 12, 27);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Burda Arayin";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(305, 53);
+            this.txtSearch.Size = new System.Drawing.Size(330, 46);
             this.txtSearch.TabIndex = 9;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // SiparisNo
-            // 
-            this.SiparisNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SiparisNo.AutoSize = true;
-            this.SiparisNo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SiparisNo.ForeColor = System.Drawing.Color.White;
-            this.SiparisNo.Location = new System.Drawing.Point(952, 29);
-            this.SiparisNo.Name = "SiparisNo";
-            this.SiparisNo.Size = new System.Drawing.Size(116, 30);
-            this.SiparisNo.TabIndex = 1;
-            this.SiparisNo.Text = "Siparis No:";
-            // 
-            // PersonelAd
-            // 
-            this.PersonelAd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PersonelAd.AutoSize = true;
-            this.PersonelAd.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PersonelAd.ForeColor = System.Drawing.Color.White;
-            this.PersonelAd.Location = new System.Drawing.Point(952, 59);
-            this.PersonelAd.Name = "PersonelAd";
-            this.PersonelAd.Size = new System.Drawing.Size(133, 30);
-            this.PersonelAd.TabIndex = 1;
-            this.PersonelAd.Text = "Personel Ad:";
             // 
             // frmPOS
             // 
@@ -511,6 +529,10 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button BtnBeklet;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private Guna.UI2.WinForms.Guna2Button btnOdeme;
+        private System.Windows.Forms.Label PersonelAd;
+        private System.Windows.Forms.Label SiparisNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvProID;
@@ -518,9 +540,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
-        private System.Windows.Forms.ColorDialog colorDialog1;
-        private Guna.UI2.WinForms.Guna2Button btnOdeme;
-        private System.Windows.Forms.Label PersonelAd;
-        private System.Windows.Forms.Label SiparisNo;
+        private System.Windows.Forms.DataGridViewImageColumn dgvsilme;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

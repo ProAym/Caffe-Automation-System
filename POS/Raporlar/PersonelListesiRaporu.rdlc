@@ -256,7 +256,7 @@
         <Top>0.61458in</Top>
         <Left>0.43625in</Left>
         <Height>0.9375in</Height>
-        <Width>6.0625in</Width>
+        <Width>6.06249in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -312,6 +312,38 @@
           <Height>0.47917in</Height>
           <Width>2.38542in</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox23">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Today()</Value>
+                  <Style>
+                    <Format>M/d/yyyy</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox23</rd:DefaultName>
+          <Top>0.30667in</Top>
+          <Left>4.87959in</Left>
+          <Height>0.25in</Height>
+          <Width>1.73958in</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

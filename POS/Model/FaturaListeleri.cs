@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,7 +30,7 @@ namespace POS.Model
         private void LoadData()
         {
             string qry = @"select MainID, SiparisId, PersonelAd, orderType, status, total From tblMain
-                           where status <> 'Pending'";
+                           where status <> 'Hold'";
             ListBox lb = new ListBox();
             lb.Items.Add(dgvid);
             lb.Items.Add(dgvtable);
@@ -64,14 +65,51 @@ namespace POS.Model
             {
                 // Print bill
                 MainID = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                var fisYazdirForm = new FisYazdir(MainID);
-                fisYazdirForm.Show();
+                 FisYazdir frm = new FisYazdir(MainID);
+                 frm.Show();
             }
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            // Define the query with parameter placeholders
+            string qry = @"SELECT MainID, SiparisId, PersonelAd, orderType, status, total 
+                   FROM tblMain
+                   WHERE aDate BETWEEN @sdate AND @edate";
+
+            // Get the selected start and end dates from the date pickers
+            DateTime startDate = guna2DateTimePicker1.Value.Date;
+            DateTime endDate = guna2DateTimePicker2.Value.Date;
+
+            // Define the connection string (replace with your actual connection string)
+            string ConnectionString = "Data Source=DESKTOP-7E9QC34;Initial Catalog=RM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+
+
+            // Create a new DataTable to hold the query results
+            DataTable dt = new DataTable();
+
+            // Create and open a new SqlConnection
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                // Create a new SqlDataAdapter with the query and the connection
+                using (SqlDataAdapter da = new SqlDataAdapter(qry, con))
+                {
+                    // Add parameters to the SelectCommand
+                    da.SelectCommand.Parameters.AddWithValue("@sdate", startDate);
+                    da.SelectCommand.Parameters.AddWithValue("@edate", endDate);
+
+                    // Fill the DataTable with the results of the query
+                    da.Fill(dt);
+                }
+            }
+
+            // Assuming you have a DataGridView named dgvResults to display the data
+            guna2DataGridView1.DataSource = dt;
         }
     }
 }

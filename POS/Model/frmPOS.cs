@@ -244,7 +244,14 @@ namespace POS.Model
 
         private void btnOdeme_Click(object sender, EventArgs e)
         {
-           
+
+            // Check if there are any rows in the DataGridView
+            if (guna2DataGridView1.Rows.Count == 0)
+            {
+                // Show an error message if no products are selected
+                MessageBox.Show("Lütfen bir ürün seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             SaveOrder();
 
@@ -350,10 +357,9 @@ namespace POS.Model
 
         private void SetOrderDetails()
         {
-            // Automatically set the Siparis ID to a random value
-            Random random = new Random();
-            int randomSiparisId = random.Next(1000, 9999); // Generates a random number between 1000 and 9999
-            lblTable.Text = randomSiparisId.ToString();
+            // Generate a unique Siparis ID
+            int uniqueSiparisId = GenerateUniqueSiparisId();
+            lblTable.Text = uniqueSiparisId.ToString();
             lblTable.Visible = true;
 
             // Set the name of the logged-in personnel
@@ -369,10 +375,88 @@ namespace POS.Model
             }
         }
 
+        private int GenerateUniqueSiparisId()
+        {
+            Random random = new Random();
+            int siparisId;
+
+            while (true)
+            {
+                // Generate a random Siparis ID between 1000 and 9999
+                siparisId = random.Next(1000, 9999);
+
+                // Check if the generated ID already exists in the database
+                if (!SiparisIdExists(siparisId))
+                {
+                    break;
+                }
+            }
+
+            return siparisId;
+        }
+
+        private bool SiparisIdExists(int siparisId)
+        {
+            bool exists = false;
+
+            // Define the connection string (replace with your actual connection string)
+            string connectionString = "Data Source=DESKTOP-7E9QC34;Initial Catalog=RM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+
+
+            string qry = "SELECT COUNT(*) FROM tblMain WHERE SiparisId = @SiparisId";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(qry, con))
+                {
+                    cmd.Parameters.AddWithValue("@SiparisId", siparisId);
+
+                    con.Open();
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    con.Close();
+
+                    exists = (count > 0);
+                }
+            }
+
+            return exists;
+        }
+
         private void PrintBill()
         {
             FisYazdir fisForm = new FisYazdir(MainID);
-            fisForm.ShowDialog();
+            fisForm.Show();
+        }
+
+       
+
+        private void guna2DataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the clicked cell is in the dgvSilme column
+            if (e.ColumnIndex == guna2DataGridView1.Columns["dgvSilme"].Index && e.RowIndex >= 0)
+            {
+                // Get the current quantity of the product
+                int currentQty = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvQty"].Value);
+
+                if (currentQty > 1)
+                {
+                    // Decrease the quantity by 1
+                    currentQty--;
+                    guna2DataGridView1.Rows[e.RowIndex].Cells["dgvQty"].Value = currentQty;
+
+                    // Update the amount
+                    int price = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvPrice"].Value);
+                    guna2DataGridView1.Rows[e.RowIndex].Cells["dgvAmount"].Value = currentQty * price;
+                }
+                else
+                {
+                    // If quantity is 1, remove the row
+                    guna2DataGridView1.Rows.RemoveAt(e.RowIndex);
+                }
+
+                // Update the total
+                GetTotal();
+            }
         }
     }
 }

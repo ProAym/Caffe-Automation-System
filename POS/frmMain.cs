@@ -91,7 +91,7 @@ namespace POS
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-
+            AddControls(new AyarlarView());
         }
 
         private void BtnOdeme_Click(object sender, EventArgs e)
@@ -103,6 +103,11 @@ namespace POS
         private void Raporlar_Click(object sender, EventArgs e)
         {
             AddControls(new RaporlarVıew());
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 

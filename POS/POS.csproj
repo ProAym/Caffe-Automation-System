@@ -156,6 +156,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raporlar\ByCategory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ByCategory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\ByCategoryYazdir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\ByCategoryYazdir.Designer.cs">
+      <DependentUpon>ByCategoryYazdir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\DataSet2.cs">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
@@ -169,6 +180,23 @@
     </Compile>
     <Compile Include="Raporlar\FisYazdir.Designer.cs">
       <DependentUpon>FisYazdir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\KatigoriyegoreSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\KatigoriyegoreSatis.Designer.cs">
+      <DependentUpon>KatigoriyegoreSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Menuler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Menuler.Designer.cs">
+      <DependentUpon>Menuler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Menu1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Menu1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\PersonelRapor.cs">
       <SubType>Form</SubType>
@@ -200,6 +228,12 @@
       <DependentUpon>Secme1Ekran.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="View\AyarlarView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AyarlarView.Designer.cs">
+      <DependentUpon>AyarlarView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmCategoryView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,14 +307,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Raporlar\ByCategoryYazdir.resx">
+      <DependentUpon>ByCategoryYazdir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\FisReport.rdlc" />
     <EmbeddedResource Include="Raporlar\FisYazdir.resx">
       <DependentUpon>FisYazdir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\KatigoriyegoreSatis.resx">
+      <DependentUpon>KatigoriyegoreSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Menu.rdlc" />
+    <EmbeddedResource Include="Raporlar\Menuler.resx">
+      <DependentUpon>Menuler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\PersonelListesiRaporu.rdlc" />
     <EmbeddedResource Include="Raporlar\PersonelRapor.resx">
       <DependentUpon>PersonelRapor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\ReportByCategory.rdlc" />
     <EmbeddedResource Include="SampleAdd.resx">
       <DependentUpon>SampleAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secme1Ekran.resx">
       <DependentUpon>Secme1Ekran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AyarlarView.resx">
+      <DependentUpon>AyarlarView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmCategoryView.resx">
       <DependentUpon>frmCategoryView.cs</DependentUpon>
@@ -312,6 +360,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Raporlar\ByCategory.xsc">
+      <DependentUpon>ByCategory.xsd</DependentUpon>
+    </None>
+    <None Include="Raporlar\ByCategory.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ByCategory.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Raporlar\ByCategory.xss">
+      <DependentUpon>ByCategory.xsd</DependentUpon>
+    </None>
+    <None Include="Raporlar\Menu1.xsc">
+      <DependentUpon>Menu1.xsd</DependentUpon>
+    </None>
+    <None Include="Raporlar\Menu1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Menu1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Raporlar\Menu1.xss">
+      <DependentUpon>Menu1.xsd</DependentUpon>
+    </None>
     <None Include="RMDataSet.xsc">
       <DependentUpon>RMDataSet.xsd</DependentUpon>
     </None>
@@ -556,6 +626,17 @@
     <None Include="Resources\Edit.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-full-recycle-bin-481.png" />
+    <None Include="Resources\icons8-stock-80.png" />
+    <None Include="Resources\icons8-stock-50.png" />
+    <None Include="Resources\icons8-stock-50 %281%29.png" />
+    <None Include="Resources\icons8-pos-50.png" />
+    <None Include="Resources\icons8-pos-50 %281%29.png" />
+    <None Include="Resources\icons8-reports-64.png" />
+    <None Include="Resources\icons8-reports-64 %281%29.png" />
+    <None Include="Resources\Buyukkafefoto.jpg" />
+    <None Include="Resources\coffee-shop-7-1.jpg" />
+    <None Include="Resources\Buyukkafefoto1.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

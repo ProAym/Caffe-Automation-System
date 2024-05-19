@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.BtnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.dgvSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,10 @@
             this.dgvTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvedit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvdel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.BtnExit = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -146,13 +149,13 @@
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(7, 135);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(7, 192);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowTemplate.Height = 35;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1058, 344);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1058, 375);
             this.guna2DataGridView1.TabIndex = 6;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -178,19 +181,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             this.guna2DataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.guna2DataGridView1_CellFormatting);
-            // 
-            // BtnExit
-            // 
-            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.BtnExit.HoverState.Parent = this.BtnExit;
-            this.BtnExit.IconColor = System.Drawing.Color.White;
-            this.BtnExit.Location = new System.Drawing.Point(993, 39);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.ShadowDecoration.Parent = this.BtnExit;
-            this.BtnExit.Size = new System.Drawing.Size(45, 29);
-            this.BtnExit.TabIndex = 5;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // dgvSno
             // 
@@ -263,11 +253,70 @@
             this.dgvdel.ReadOnly = true;
             this.dgvdel.Width = 50;
             // 
+            // BtnExit
+            // 
+            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnExit.HoverState.Parent = this.BtnExit;
+            this.BtnExit.IconColor = System.Drawing.Color.White;
+            this.BtnExit.Location = new System.Drawing.Point(993, 39);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.ShadowDecoration.Parent = this.BtnExit;
+            this.BtnExit.Size = new System.Drawing.Size(45, 29);
+            this.BtnExit.TabIndex = 5;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
+            // guna2DateTimePicker1
+            // 
+            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(41, 138);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 36);
+            this.guna2DateTimePicker1.TabIndex = 7;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2024, 5, 19, 20, 17, 35, 668);
+            // 
+            // guna2DateTimePicker2
+            // 
+            this.guna2DateTimePicker2.CheckedState.Parent = this.guna2DateTimePicker2;
+            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker2.HoverState.Parent = this.guna2DateTimePicker2;
+            this.guna2DateTimePicker2.Location = new System.Drawing.Point(258, 138);
+            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
+            this.guna2DateTimePicker2.ShadowDecoration.Parent = this.guna2DateTimePicker2;
+            this.guna2DateTimePicker2.Size = new System.Drawing.Size(205, 36);
+            this.guna2DateTimePicker2.TabIndex = 8;
+            this.guna2DateTimePicker2.Value = new System.DateTime(2024, 5, 19, 20, 17, 39, 993);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(516, 129);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.TabIndex = 9;
+            this.guna2Button1.Text = "guna2Button1";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // FaturaListeleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1073, 613);
+            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.guna2DateTimePicker2);
+            this.Controls.Add(this.guna2DateTimePicker1);
             this.Controls.Add(this.guna2DataGridView1);
             this.Name = "FaturaListeleri";
             this.Text = "FaturaListeleri";
@@ -275,6 +324,9 @@
             this.Controls.SetChildIndex(this.guna2Panel1, 0);
             this.Controls.SetChildIndex(this.guna2Panel2, 0);
             this.Controls.SetChildIndex(this.guna2DataGridView1, 0);
+            this.Controls.SetChildIndex(this.guna2DateTimePicker1, 0);
+            this.Controls.SetChildIndex(this.guna2DateTimePicker2, 0);
+            this.Controls.SetChildIndex(this.guna2Button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -297,5 +349,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTotal;
         private System.Windows.Forms.DataGridViewImageColumn dgvedit;
         private System.Windows.Forms.DataGridViewImageColumn dgvdel;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
