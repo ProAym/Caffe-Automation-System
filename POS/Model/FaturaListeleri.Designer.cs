@@ -296,17 +296,19 @@
             // 
             // guna2Button1
             // 
+            this.guna2Button1.BorderRadius = 10;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(516, 129);
+            this.guna2Button1.Location = new System.Drawing.Point(479, 138);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(116, 45);
             this.guna2Button1.TabIndex = 9;
-            this.guna2Button1.Text = "guna2Button1";
+            this.guna2Button1.Text = "Listele";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // FaturaListeleri
