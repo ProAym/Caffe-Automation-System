@@ -132,10 +132,11 @@
             // 
             this.PersonelIsim.AutoSize = true;
             this.PersonelIsim.BackColor = System.Drawing.Color.Transparent;
-            this.PersonelIsim.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonelIsim.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonelIsim.ForeColor = System.Drawing.Color.White;
             this.PersonelIsim.Location = new System.Drawing.Point(6, 24);
             this.PersonelIsim.Name = "PersonelIsim";
-            this.PersonelIsim.Size = new System.Drawing.Size(52, 21);
+            this.PersonelIsim.Size = new System.Drawing.Size(50, 19);
             this.PersonelIsim.TabIndex = 1;
             this.PersonelIsim.Text = "label2";
             // 
@@ -145,7 +146,7 @@
             this.guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
             this.guna2ControlBox1.Location = new System.Drawing.Point(1092, 12);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
@@ -157,7 +158,7 @@
             this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
             this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
             this.guna2ControlBox2.Location = new System.Drawing.Point(1143, 12);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
@@ -223,7 +224,7 @@
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
@@ -250,7 +251,7 @@
             this.guna2Button10.CheckedState.Parent = this.guna2Button10;
             this.guna2Button10.CustomImages.Parent = this.guna2Button10;
             this.guna2Button10.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button10.ForeColor = System.Drawing.Color.White;
             this.guna2Button10.HoverState.Parent = this.guna2Button10;
             this.guna2Button10.Image = global::POS.Properties.Resources.icons8_dog_house_501;

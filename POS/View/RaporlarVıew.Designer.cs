@@ -49,7 +49,7 @@
             this.Personel.CheckedState.Parent = this.Personel;
             this.Personel.CustomImages.Parent = this.Personel;
             this.Personel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
-            this.Personel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Personel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Personel.ForeColor = System.Drawing.Color.Black;
             this.Personel.HoverState.Parent = this.Personel;
             this.Personel.Location = new System.Drawing.Point(33, 88);
@@ -65,7 +65,7 @@
             this.KatigoriSatis.CheckedState.Parent = this.KatigoriSatis;
             this.KatigoriSatis.CustomImages.Parent = this.KatigoriSatis;
             this.KatigoriSatis.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
-            this.KatigoriSatis.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.KatigoriSatis.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KatigoriSatis.ForeColor = System.Drawing.Color.Black;
             this.KatigoriSatis.HoverState.Parent = this.KatigoriSatis;
             this.KatigoriSatis.Location = new System.Drawing.Point(219, 88);
@@ -73,7 +73,7 @@
             this.KatigoriSatis.ShadowDecoration.Parent = this.KatigoriSatis;
             this.KatigoriSatis.Size = new System.Drawing.Size(180, 126);
             this.KatigoriSatis.TabIndex = 2;
-            this.KatigoriSatis.Text = "Katigoriye Gore Satislar";
+            this.KatigoriSatis.Text = "Kategoriye Gore Satislar";
             this.KatigoriSatis.Click += new System.EventHandler(this.KatigoriSatis_Click);
             // 
             // Menu
@@ -81,7 +81,7 @@
             this.Menu.CheckedState.Parent = this.Menu;
             this.Menu.CustomImages.Parent = this.Menu;
             this.Menu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
-            this.Menu.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Menu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.Menu.ForeColor = System.Drawing.Color.Black;
             this.Menu.HoverState.Parent = this.Menu;
             this.Menu.Location = new System.Drawing.Point(405, 88);
