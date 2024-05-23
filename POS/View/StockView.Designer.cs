@@ -1,6 +1,6 @@
 ﻿namespace POS.View
 {
-    partial class AyarlarView
+    partial class StockView
     {
         /// <summary>
         /// Required designer variable.

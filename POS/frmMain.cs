@@ -91,13 +91,13 @@ namespace POS
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            AddControls(new AyarlarView());
+            AddControls(new StockView());
         }
 
         private void BtnOdeme_Click(object sender, EventArgs e)
         {
-            frmPOS frm = new frmPOS();
-            frm.Show();
+            
+            AddControls(new frmPOS());
         }
 
         private void Raporlar_Click(object sender, EventArgs e)

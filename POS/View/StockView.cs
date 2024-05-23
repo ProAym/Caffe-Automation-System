@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace POS.View
 {
-    public partial class AyarlarView : Form
+    public partial class StockView : Form
     {
-        public AyarlarView()
+        public StockView()
         {
             InitializeComponent();
         }
@@ -19,7 +19,7 @@ namespace POS.View
 
         private void LoadInventoryData()
         {
-            string qry = "SELECT uID, uAd, StockLevel, ReorderThreshold, LastUpdated FROM Urunler";
+            string qry = "SELECT UrunID, UrunAdi, Adet, Threshold , LastUpdated FROM Stok";
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-7E9QC34;Initial Catalog=RM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"))
             {
@@ -45,7 +45,7 @@ namespace POS.View
                     try
                     {
                         // Update Urunler table
-                        string updateQry = "UPDATE Urunler SET StockLevel = @StockLevel, ReorderThreshold = @ReorderThreshold, LastUpdated = GETDATE() WHERE uID = @ProductID";
+                        string updateQry = "UPDATE Stok SET Adet = @StockLevel, Threshold = @ReorderThreshold, LastUpdated = GETDATE() WHERE UrunID = @ProductID";
                         using (SqlCommand updateCmd = new SqlCommand(updateQry, con, transaction))
                         {
                             updateCmd.Parameters.AddWithValue("@StockLevel", newStockLevel);
@@ -95,7 +95,7 @@ namespace POS.View
         {
             if (guna2DataGridView1.SelectedRows.Count > 0)
             {
-                int productId = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["uID"].Value);
+                int productId = Convert.ToInt32(guna2DataGridView1.SelectedRows[0].Cells["UrunID"].Value);
                 LoadInventoryLogs(productId);
             }
         }
@@ -109,7 +109,7 @@ namespace POS.View
             }
 
             DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
-            int productId = Convert.ToInt32(selectedRow.Cells["uID"].Value);
+            int productId = Convert.ToInt32(selectedRow.Cells["UrunID"].Value);
             int newStockLevel;
             int newReorderThreshold;
 

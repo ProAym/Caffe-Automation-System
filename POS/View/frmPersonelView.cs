@@ -1,4 +1,5 @@
 ﻿using POS.Model;
+using POS.Raporlar;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -90,6 +91,12 @@ namespace POS.View
                     e.Value = maskedValue;
                 }
             }
+        }
+
+        private void Personel_Click(object sender, EventArgs e)
+        {
+            PersonelRapor frm = new PersonelRapor();
+            frm.Show();
         }
     }
 }

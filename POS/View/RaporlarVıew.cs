@@ -19,11 +19,7 @@ namespace POS.View
             InitializeComponent();
         }
 
-        private void Personel_Click(object sender, EventArgs e)
-        {
-            PersonelRapor frm = new PersonelRapor();
-            frm.Show();
-        }
+        
 
         private void KatigoriSatis_Click(object sender, EventArgs e)
         {

@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnExit
@@ -44,7 +46,7 @@
             this.BtnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.BtnExit.HoverState.Parent = this.BtnExit;
             this.BtnExit.IconColor = System.Drawing.Color.Black;
-            this.BtnExit.Location = new System.Drawing.Point(307, 23);
+            this.BtnExit.Location = new System.Drawing.Point(1527, 23);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.ShadowDecoration.Parent = this.BtnExit;
             this.BtnExit.Size = new System.Drawing.Size(45, 29);
@@ -61,7 +63,7 @@
             this.BtnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnLogin.ForeColor = System.Drawing.Color.Black;
             this.BtnLogin.HoverState.Parent = this.BtnLogin;
-            this.BtnLogin.Location = new System.Drawing.Point(186, 248);
+            this.BtnLogin.Location = new System.Drawing.Point(226, 315);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.ShadowDecoration.Parent = this.BtnLogin;
             this.BtnLogin.Size = new System.Drawing.Size(115, 52);
@@ -72,10 +74,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(35, 161);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(75, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 21);
             this.label2.TabIndex = 12;
@@ -96,7 +98,7 @@
             this.TxtPass.FocusedState.Parent = this.TxtPass;
             this.TxtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtPass.HoverState.Parent = this.TxtPass;
-            this.TxtPass.Location = new System.Drawing.Point(39, 187);
+            this.TxtPass.Location = new System.Drawing.Point(79, 254);
             this.TxtPass.Margin = new System.Windows.Forms.Padding(5);
             this.TxtPass.Name = "TxtPass";
             this.TxtPass.PasswordChar = '\0';
@@ -122,7 +124,7 @@
             this.TxtUser.FocusedState.Parent = this.TxtUser;
             this.TxtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtUser.HoverState.Parent = this.TxtUser;
-            this.TxtUser.Location = new System.Drawing.Point(39, 104);
+            this.TxtUser.Location = new System.Drawing.Point(79, 171);
             this.TxtUser.Margin = new System.Windows.Forms.Padding(4);
             this.TxtUser.Name = "TxtUser";
             this.TxtUser.PasswordChar = '\0';
@@ -135,10 +137,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 79);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(75, 146);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 21);
             this.label1.TabIndex = 11;
@@ -149,8 +151,8 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(118, 23);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(158, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 23);
             this.label3.TabIndex = 11;
@@ -167,34 +169,46 @@
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::POS.Properties.Resources.icons8_left_arrow_100;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(12, 12);
+            this.guna2Button1.Location = new System.Drawing.Point(52, 79);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(43, 40);
             this.guna2Button1.TabIndex = 14;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.TxtUser);
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.BtnLogin);
+            this.guna2Panel1.Controls.Add(this.TxtPass);
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Location = new System.Drawing.Point(791, 332);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(403, 454);
+            this.guna2Panel1.TabIndex = 15;
+            // 
             // PersonelGiris
             // 
             this.AcceptButton = this.BtnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::POS.Properties.Resources.WhatsApp_Image_2024_05_05_at_18_21_25_6c35e4da;
-            this.ClientSize = new System.Drawing.Size(364, 535);
-            this.Controls.Add(this.guna2Button1);
+            this.BackgroundImage = global::POS.Properties.Resources.pexels_quark_studio_1159039_2506993;
+            this.ClientSize = new System.Drawing.Size(1584, 879);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.BtnExit);
-            this.Controls.Add(this.BtnLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtPass);
-            this.Controls.Add(this.TxtUser);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PersonelGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PersonelGiris";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -208,5 +222,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

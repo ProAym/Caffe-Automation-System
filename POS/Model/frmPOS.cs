@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using POS.Raporlar;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -17,7 +18,7 @@ namespace POS.Model
         }
 
         public int MainID = 0;
-        
+
 
         private void frmPOS_Load(object sender, EventArgs e)
         {
@@ -49,7 +50,7 @@ namespace POS.Model
                 {
                     Guna2Button b = new Guna2Button
                     {
-                        FillColor = Color.FromArgb(50, 55, 89),
+                        FillColor = Color.FromArgb(217, 200, 189),
                         Size = new Size(197, 53),
                         ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton,
                         Text = row["catName"].ToString()
@@ -77,7 +78,7 @@ namespace POS.Model
             }
         }
 
-        private void AddItems(string id, string proID, string name, string cat, string price, Image pImage)
+        private void AddItems(string id, string proID, string name, string cat, string price, Image pImage, string v)
         {
             if (!int.TryParse(price, out int parsedPrice))
             {
@@ -122,7 +123,7 @@ namespace POS.Model
 
         private void LoadProducts()
         {
-            string qry = "Select * from Urunler inner join category on catID = KategoriID";
+            string qry = "SELECT u.uID, u.uAd, u.uFiyat, u.uImage, c.catName, c.catID FROM Urunler u INNER JOIN category c ON u.KategoriID = c.catID";
             SqlCommand cmd = new SqlCommand(qry, MainClass.con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -132,7 +133,8 @@ namespace POS.Model
             {
                 byte[] imagearray = (byte[])item["uImage"];
                 AddItems("0", item["uID"].ToString(), item["uAd"].ToString(), item["catName"].ToString(),
-                    item["uFiyat"].ToString(), Image.FromStream(new MemoryStream(imagearray)));
+                    item["uFiyat"].ToString(), Image.FromStream(new MemoryStream(imagearray)),
+                    item["catID"].ToString()); // Pass the KategoriID to AddItems method
             }
         }
 
@@ -172,8 +174,8 @@ namespace POS.Model
             SetOrderDetails();
         }
 
-        
-        
+
+
 
         private void BtnBeklet_Click_1(object sender, EventArgs e)
         {
@@ -208,6 +210,7 @@ namespace POS.Model
             string qry = @"SELECT * FROM tblMain m
                 INNER JOIN tblDetails d ON m.MainID = d.MainID
                 INNER JOIN Urunler p ON p.uID = d.proID
+                INNER JOIN category c ON u.KategoriID = c.catID
                 WHERE m.MainID = " + id;
 
             SqlCommand cmd = new SqlCommand(qry, MainClass.con);
@@ -228,7 +231,8 @@ namespace POS.Model
                         item["uAd"],
                         item["qty"],
                         item["fiyat"],
-                        item["Toplam"]
+                        item["Toplam"],
+                        item["KategoriID"]
                     });
                 }
 
@@ -244,11 +248,8 @@ namespace POS.Model
 
         private void btnOdeme_Click(object sender, EventArgs e)
         {
-
-            // Check if there are any rows in the DataGridView
             if (guna2DataGridView1.Rows.Count == 0)
             {
-                // Show an error message if no products are selected
                 MessageBox.Show("Lütfen bir ürün seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -265,10 +266,25 @@ namespace POS.Model
             if (frm.DialogResult == DialogResult.OK)
             {
                 UpdateOrderStatus("Ödendi");
+
+                // Subtract the ingredients used in the order from the stock for drinks only
+                foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+                {
+                    int urunId = Convert.ToInt32(row.Cells["dgvProID"].Value); // Assuming there is a column for UrunID
+                    int kategoriId = 2;
+
+                    if (kategoriId == 2) // Only process if it is a drink
+                    {
+                        Dictionary<string, int> ingredients = GetIngredients(urunId);
+                        UpdateStock(ingredients);
+                    }
+                }
+
                 ResetOrderForm();
                 MessageBox.Show("Ödeme başarıyla alındı ve sipariş kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
         private void SaveOrder()
         {
@@ -295,7 +311,7 @@ namespace POS.Model
             cmd.Parameters.AddWithValue("@Siparis", lblTable.Text);
             cmd.Parameters.AddWithValue("@PersonelAd", lblWaiter.Text);
             cmd.Parameters.AddWithValue("@status", "Hold");
-            
+
             cmd.Parameters.AddWithValue("@total", Convert.ToDouble(lblTotal.Text));
             cmd.Parameters.AddWithValue("@received", 0);
             cmd.Parameters.AddWithValue("@change", 0);
@@ -353,6 +369,40 @@ namespace POS.Model
             lblTable.Visible = false;
             lblWaiter.Visible = false;
             lblTotal.Text = "00,00";
+        }
+
+
+
+
+
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the clicked cell is in the dgvSilme column
+            if (e.ColumnIndex == guna2DataGridView1.Columns["dgvSilme"].Index && e.RowIndex >= 0)
+            {
+                // Get the current quantity of the product
+                int currentQty = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvQty"].Value);
+
+                if (currentQty > 1)
+                {
+                    // Decrease the quantity by 1
+                    currentQty--;
+                    guna2DataGridView1.Rows[e.RowIndex].Cells["dgvQty"].Value = currentQty;
+
+                    // Update the amount
+                    int price = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvPrice"].Value);
+                    guna2DataGridView1.Rows[e.RowIndex].Cells["dgvAmount"].Value = currentQty * price;
+                }
+                else
+                {
+                    // If quantity is 1, remove the row
+                    guna2DataGridView1.Rows.RemoveAt(e.RowIndex);
+                }
+
+                // Update the total
+                GetTotal();
+            }
         }
 
         private void SetOrderDetails()
@@ -428,35 +478,89 @@ namespace POS.Model
             fisForm.Show();
         }
 
-       
 
-        private void guna2DataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private Dictionary<string, int> GetIngredients(int urunId)
         {
-            // Check if the clicked cell is in the dgvSilme column
-            if (e.ColumnIndex == guna2DataGridView1.Columns["dgvSilme"].Index && e.RowIndex >= 0)
+
+            Dictionary<string, int> ingredients = new Dictionary<string, int>();
+
+            string qry = @"
+        SELECT UrunAdi, UniteAdeti
+        FROM UrunIngredients
+        WHERE UrunID = @UrunID";
+
+
+
+            SqlCommand cmd = new SqlCommand(qry, MainClass.con);
+            cmd.Parameters.AddWithValue("@UrunID", urunId);
+
+
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                // Get the current quantity of the product
-                int currentQty = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvQty"].Value);
-
-                if (currentQty > 1)
+                while (reader.Read())
                 {
-                    // Decrease the quantity by 1
-                    currentQty--;
-                    guna2DataGridView1.Rows[e.RowIndex].Cells["dgvQty"].Value = currentQty;
-
-                    // Update the amount
-                    int price = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvPrice"].Value);
-                    guna2DataGridView1.Rows[e.RowIndex].Cells["dgvAmount"].Value = currentQty * price;
+                    string ingredientName = reader["UrunAdi"].ToString();
+                    int quantity = int.Parse(reader["UniteAdeti"].ToString());
+                    if (ingredients.ContainsKey(ingredientName))
+                    {
+                        ingredients[ingredientName] += quantity;
+                    }
+                    else
+                    {
+                        ingredients.Add(ingredientName, quantity);
+                    }
                 }
-                else
-                {
-                    // If quantity is 1, remove the row
-                    guna2DataGridView1.Rows.RemoveAt(e.RowIndex);
-                }
-
-                // Update the total
-                GetTotal();
             }
+            
+
+            return ingredients;
         }
+        private void UpdateStock(Dictionary<string, int> ingredients)
+        {
+            foreach (var ingredient in ingredients)
+            {
+                string qry = @"
+            UPDATE Stok
+            SET Adet = Adet - @UsedQuantity
+            WHERE UrunAdi = @UrunAdi;
+
+            SELECT Adet, Threshold
+            FROM Stok
+            WHERE UrunAdi = @UrunAdi";
+
+
+
+                SqlCommand cmd = new SqlCommand(qry, MainClass.con);
+                cmd.Parameters.AddWithValue("@UsedQuantity", ingredient.Value);
+                cmd.Parameters.AddWithValue("@UrunAdi", ingredient.Key);
+
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int remainingQuantity = int.Parse(reader["Adet"].ToString());
+                        int threshold = int.Parse(reader["Threshold"].ToString());
+
+                        if (remainingQuantity <= threshold)
+                        {
+                            MessageBox.Show($"{ingredient.Key} is running low. Only {remainingQuantity} units left.", "Stock Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+
+
+
+            }
+            MessageBox.Show("UpdateStock function execution complete.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+        }
+
+
+
+
+
     }
 }
+

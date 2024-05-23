@@ -58,7 +58,6 @@
             this.Personel.Size = new System.Drawing.Size(180, 126);
             this.Personel.TabIndex = 1;
             this.Personel.Text = "Personel";
-            this.Personel.Click += new System.EventHandler(this.Personel_Click);
             // 
             // KatigoriSatis
             // 

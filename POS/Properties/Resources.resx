@@ -199,6 +199,9 @@
   <data name="icons8-plus-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-plus-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-left-arrow-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-left-arrow-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CODASK Cafessss1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CODASK Cafessss1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -268,14 +271,23 @@
   <data name="coffee-shop-7-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coffee-shop-7-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pexels-bluerhinomedia-2788792 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-bluerhinomedia-2788792 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-table-501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-table-501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-medium-priority-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-medium-priority-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-staff-whıte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-staff-whıte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Buyukkafefoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Buyukkafefoto1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-chef-hat-501" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-chef-hat-501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,9 +307,6 @@
   <data name="Buyukkafefoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Buyukkafefoto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-left-arrow-1001" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-left-arrow-1001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-stock-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-stock-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -307,11 +316,11 @@
   <data name="icons8-reports-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-reports-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-medium-priority-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-medium-priority-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pexels-bluerhinomedia-2788792" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-bluerhinomedia-2788792.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-left-arrow-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-left-arrow-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-left-arrow-1001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-left-arrow-1001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-medium-priority-whıte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-medium-priority-whıte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -346,7 +355,7 @@
   <data name="icons8-products-whıte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-products-whıte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Buyukkafefoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Buyukkafefoto1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pexels-quark-studio-1159039-2506993" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-quark-studio-1159039-2506993.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using POS.Raporlar;
+using POS.View;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -67,6 +68,7 @@ namespace POS.Model
                 MainID = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
                  FisYazdir frm = new FisYazdir(MainID);
                  frm.Show();
+                
             }
         }
 

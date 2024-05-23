@@ -37,8 +37,8 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(127, 25);
-            this.label1.Text = "Add Category";
+            this.label1.Size = new System.Drawing.Size(122, 25);
+            this.label1.Text = "Kategori Ekle";
             // 
             // guna2PictureBox1
             // 
@@ -91,9 +91,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(44, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Name";
+            this.label2.Text = "Kategori Adı";
             // 
             // txtName
             // 

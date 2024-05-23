@@ -793,6 +793,36 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pexels_bluerhinomedia_2788792 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-bluerhinomedia-2788792", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_bluerhinomedia_2788792__1_ {
+            get {
+                object obj = ResourceManager.GetObject("pexels-bluerhinomedia-2788792 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_quark_studio_1159039_2506993 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-quark-studio-1159039-2506993", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap products {
             get {
                 object obj = ResourceManager.GetObject("products", resourceCulture);

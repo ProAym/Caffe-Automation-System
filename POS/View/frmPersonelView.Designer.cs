@@ -41,8 +41,21 @@
             this.dgvTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvedit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvdel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Personel = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.PressedState.Parent = this.btnAdd;
+            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnAdd.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.None;
             // 
             // txtSearch
             // 
@@ -57,18 +70,6 @@
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.Location = new System.Drawing.Point(604, 75);
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAdd.PressedState.Parent = this.btnAdd;
-            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAdd.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btnAdd.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.None;
             // 
             // label2
             // 
@@ -218,11 +219,28 @@
             this.dgvdel.ReadOnly = true;
             this.dgvdel.Width = 50;
             // 
+            // Personel
+            // 
+            this.Personel.CheckedState.Parent = this.Personel;
+            this.Personel.CustomImages.Parent = this.Personel;
+            this.Personel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
+            this.Personel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Personel.ForeColor = System.Drawing.Color.Black;
+            this.Personel.HoverState.Parent = this.Personel;
+            this.Personel.Location = new System.Drawing.Point(114, 75);
+            this.Personel.Name = "Personel";
+            this.Personel.ShadowDecoration.Parent = this.Personel;
+            this.Personel.Size = new System.Drawing.Size(197, 47);
+            this.Personel.TabIndex = 7;
+            this.Personel.Text = "Personel Listesini Yazdir";
+            this.Personel.Click += new System.EventHandler(this.Personel_Click);
+            // 
             // frmPersonelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 588);
+            this.Controls.Add(this.Personel);
             this.Controls.Add(this.guna2DataGridView1);
             this.Name = "frmPersonelView";
             this.Text = "frmPersonelView";
@@ -232,6 +250,7 @@
             this.Controls.SetChildIndex(this.btnAdd, 0);
             this.Controls.SetChildIndex(this.txtSearch, 0);
             this.Controls.SetChildIndex(this.guna2DataGridView1, 0);
+            this.Controls.SetChildIndex(this.Personel, 0);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,5 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvTC;
         private System.Windows.Forms.DataGridViewImageColumn dgvedit;
         private System.Windows.Forms.DataGridViewImageColumn dgvdel;
+        private Guna.UI2.WinForms.Guna2Button Personel;
     }
 }
