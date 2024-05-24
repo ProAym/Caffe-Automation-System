@@ -270,14 +270,13 @@ namespace POS.Model
                 // Subtract the ingredients used in the order from the stock for drinks only
                 foreach (DataGridViewRow row in guna2DataGridView1.Rows)
                 {
-                    int urunId = Convert.ToInt32(row.Cells["dgvProID"].Value); // Assuming there is a column for UrunID
-                    int kategoriId = 2;
+                    int urunId = Convert.ToInt32(row.Cells["dgvProID"].Value); 
+                    Dictionary<string, int> ingredients = GetIngredients(urunId);
+                    UpdateStock(ingredients);
 
-                    if (kategoriId == 2) // Only process if it is a drink
-                    {
-                        Dictionary<string, int> ingredients = GetIngredients(urunId);
-                        UpdateStock(ingredients);
-                    }
+
+
+
                 }
 
                 ResetOrderForm();
@@ -484,10 +483,7 @@ namespace POS.Model
 
             Dictionary<string, int> ingredients = new Dictionary<string, int>();
 
-            string qry = @"
-        SELECT UrunAdi, UniteAdeti
-        FROM UrunIngredients
-        WHERE UrunID = @UrunID";
+            string qry = @"SELECT UrunAdi, UniteAdeti FROM UrunIngredients WHERE UrunID = @UrunID";
 
 
 
@@ -517,44 +513,60 @@ namespace POS.Model
         }
         private void UpdateStock(Dictionary<string, int> ingredients)
         {
-            foreach (var ingredient in ingredients)
+            if (MainClass.con.State == ConnectionState.Closed)
             {
-                string qry = @"
-            UPDATE Stok
-            SET Adet = Adet - @UsedQuantity
-            WHERE UrunAdi = @UrunAdi;
+                MainClass.con.Open();
+            }
 
-            SELECT Adet, Threshold
-            FROM Stok
-            WHERE UrunAdi = @UrunAdi";
-
-
-
-                SqlCommand cmd = new SqlCommand(qry, MainClass.con);
-                cmd.Parameters.AddWithValue("@UsedQuantity", ingredient.Value);
-                cmd.Parameters.AddWithValue("@UrunAdi", ingredient.Key);
-
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
+            try
+            {
+                foreach (var ingredient in ingredients)
                 {
-                    if (reader.Read())
-                    {
-                        int remainingQuantity = int.Parse(reader["Adet"].ToString());
-                        int threshold = int.Parse(reader["Threshold"].ToString());
+                    string updateQry = @"
+                UPDATE Stok
+                SET Adet = Adet - @UsedQuantity
+                WHERE UrunAdi = @UrunAdi";
 
-                        if (remainingQuantity <= threshold)
+                    SqlCommand updateCmd = new SqlCommand(updateQry, MainClass.con);
+                    updateCmd.Parameters.AddWithValue("@UsedQuantity", ingredient.Value);
+                    updateCmd.Parameters.AddWithValue("@UrunAdi", ingredient.Key);
+
+                    updateCmd.ExecuteNonQuery();
+
+                    string readQry = @"
+                SELECT Adet, Threshold
+                FROM Stok
+                WHERE UrunAdi = @UrunAdi";
+
+                    SqlCommand readCmd = new SqlCommand(readQry, MainClass.con);
+                    readCmd.Parameters.AddWithValue("@UrunAdi", ingredient.Key);
+
+                    using (SqlDataReader reader = readCmd.ExecuteReader())
+                    {
+                        if (reader.Read())
                         {
-                            MessageBox.Show($"{ingredient.Key} is running low. Only {remainingQuantity} units left.", "Stock Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            int remainingQuantity = int.Parse(reader["Adet"].ToString());
+                            int threshold = int.Parse(reader["Threshold"].ToString());
+
+                            if (remainingQuantity <= threshold)
+                            {
+                                MessageBox.Show($"{ingredient.Key} is running low. Only {remainingQuantity} units left.", "Stock Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                     }
                 }
-
-
-
             }
-            MessageBox.Show("UpdateStock function execution complete.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error updating stock: {ex.Message}", "Stock Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (MainClass.con.State == ConnectionState.Open)
+                {
+                    MainClass.con.Close();
+                }
+            }
         }
 
 

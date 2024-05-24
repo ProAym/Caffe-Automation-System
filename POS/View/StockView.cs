@@ -35,7 +35,7 @@ namespace POS.View
 
        
 
-        private void UpdateInventory(int productId, int newStockLevel, int newReorderThreshold)
+        private void UpdateInventory(int productId, int YeniStokLeveli, int newReorderThreshold)
         {
             using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-7E9QC34;Initial Catalog=RM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"))
             {
@@ -48,18 +48,18 @@ namespace POS.View
                         string updateQry = "UPDATE Stok SET Adet = @StockLevel, Threshold = @ReorderThreshold, LastUpdated = GETDATE() WHERE UrunID = @ProductID";
                         using (SqlCommand updateCmd = new SqlCommand(updateQry, con, transaction))
                         {
-                            updateCmd.Parameters.AddWithValue("@StockLevel", newStockLevel);
+                            updateCmd.Parameters.AddWithValue("@StockLevel", YeniStokLeveli);;
                             updateCmd.Parameters.AddWithValue("@ReorderThreshold", newReorderThreshold);
                             updateCmd.Parameters.AddWithValue("@ProductID", productId);
                             updateCmd.ExecuteNonQuery();
                         }
 
                         // Insert into InventoryLogs
-                        string logQry = "INSERT INTO InventoryLogs (ProductID, ChangeAmount, ChangeDate) VALUES (@ProductID, @ChangeAmount, GETDATE())";
+                        string logQry = "INSERT INTO DepoGirdileri (UrunID, GirelenAdet, Tarih) VALUES (@ProductID, @ChangeAmount, GETDATE())";
                         using (SqlCommand logCmd = new SqlCommand(logQry, con, transaction))
                         {
                             logCmd.Parameters.AddWithValue("@ProductID", productId);
-                            logCmd.Parameters.AddWithValue("@ChangeAmount", newStockLevel); // assuming ChangeAmount is the new stock level
+                            logCmd.Parameters.AddWithValue("@ChangeAmount", YeniStokLeveli); // assuming ChangeAmount is the new stock level
                             logCmd.ExecuteNonQuery();
                         }
 
@@ -76,7 +76,7 @@ namespace POS.View
 
         private void LoadInventoryLogs(int productId)
         {
-            string qry = "SELECT LogID, ProductID, ChangeAmount, ChangeDate FROM InventoryLogs WHERE ProductID = @ProductID ORDER BY ChangeDate DESC";
+            string qry = "SELECT GirdiID, UrunID, GirelenAdet, Tarih FROM DepoGirdileri WHERE UrunID = @ProductID ORDER BY Tarih DESC";
             DataTable dt = new DataTable();
             using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-7E9QC34;Initial Catalog=RM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"))
             {
@@ -88,7 +88,7 @@ namespace POS.View
                 }
             }
 
-            logsDataGridView.DataSource = dt; // logsDataGridView is your DataGridView for logs
+            logsDataGridView.DataSource = dt; 
         }
 
         private void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -110,16 +110,16 @@ namespace POS.View
 
             DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
             int productId = Convert.ToInt32(selectedRow.Cells["UrunID"].Value);
-            int newStockLevel;
+            int YeniStokLeveli;
             int newReorderThreshold;
 
-            if (!int.TryParse(txtStockLevel.Text, out newStockLevel) || !int.TryParse(txtReorderThreshold.Text, out newReorderThreshold))
+            if (!int.TryParse(txtStockLevel.Text, out YeniStokLeveli) || !int.TryParse(txtReorderThreshold.Text, out newReorderThreshold))
             {
                 MessageBox.Show("Geçerli bir stok seviyesi ve yeniden sipariş eşiği girin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            UpdateInventory(productId, newStockLevel, newReorderThreshold);
+            UpdateInventory(productId, YeniStokLeveli, newReorderThreshold);
             LoadInventoryData();
             LoadInventoryLogs(productId);
         }
