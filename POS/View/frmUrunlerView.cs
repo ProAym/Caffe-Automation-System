@@ -1,4 +1,5 @@
 ﻿using POS.Model;
+using POS.Raporlar;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -74,6 +75,13 @@ namespace POS.View
                 }
                    
             }
+
+        }
+
+        private void Menu_Click(object sender, EventArgs e)
+        {
+            Menuler reportForm = new Menuler();
+            reportForm.Show();
 
         }
     }

@@ -17,6 +17,7 @@ namespace POS.Model
         public frmPersonelAdd()
         {
             InitializeComponent();
+            LoadRoles(); // Load roles when the form is initialized
         }
 
         public int id = 0;
@@ -25,6 +26,25 @@ namespace POS.Model
         {
 
         }
+
+        private void LoadRoles()
+        {
+            // Load distinct roles from the database into the ComboBox
+            string connectionString = "Data Source=DESKTOP-7E9QC34;Initial Catalog=RM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string qry = "SELECT DISTINCT pRol FROM Personel"; // Retrieve distinct roles
+                SqlCommand cmd = new SqlCommand(qry, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                cbRole.Items.Clear();
+                while (reader.Read())
+                {
+                    cbRole.Items.Add(reader["pRol"].ToString());
+                }
+            }
+        }
+
 
         public override void btnSave_Click(object sender, EventArgs e)
         {
@@ -106,10 +126,9 @@ namespace POS.Model
                 ht.Add("@tckn", txtTCKN.Text);
                 ht.Add("@sifre", TxtSifre.Text);
 
-
                 if (MainClass.SQL(qry, ht) > 0)
                 {
-                    MessageBox.Show("Bşarıyla Eklendi...");
+                    MessageBox.Show("Başarıyla Eklendi...");
                     id = 0;
                     txtName.Text = "";
                     txtPhone.Text = "";
@@ -119,8 +138,30 @@ namespace POS.Model
                     txtName.Focus();
                 }
             }
+        }
 
+        private void btnAddRole_Click(object sender, EventArgs e)
+        {
+            string newRole = txtNewRole.Text.Trim(); // Assuming there's a TextBox for the new role
+            if (!string.IsNullOrEmpty(newRole))
+            {
+                string connectionString = "Data Source=DESKTOP-7E9QC34;Initial Catalog=RM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string qry = "INSERT INTO Personel (pRol) VALUES (@RoleName)";
+                    SqlCommand cmd = new SqlCommand(qry, con);
+                    cmd.Parameters.AddWithValue("@RoleName", newRole);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Role successfully added.");
 
+                    LoadRoles(); // Refresh roles in ComboBox
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a role name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

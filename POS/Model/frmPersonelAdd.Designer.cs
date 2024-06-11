@@ -38,6 +38,9 @@
             this.txtTCKN = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtSifre = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtNewRole = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAddRole = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -108,7 +111,7 @@
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
             this.txtName.Location = new System.Drawing.Point(27, 148);
-            this.txtName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -215,7 +218,7 @@
             this.txtTCKN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTCKN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTCKN.HoverState.Parent = this.txtTCKN;
-            this.txtTCKN.Location = new System.Drawing.Point(277, 212);
+            this.txtTCKN.Location = new System.Drawing.Point(276, 212);
             this.txtTCKN.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
             this.txtTCKN.Name = "txtTCKN";
             this.txtTCKN.PasswordChar = '\0';
@@ -258,15 +261,66 @@
             this.TxtSifre.Size = new System.Drawing.Size(227, 35);
             this.TxtSifre.TabIndex = 3;
             // 
+            // txtNewRole
+            // 
+            this.txtNewRole.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNewRole.DefaultText = "";
+            this.txtNewRole.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNewRole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNewRole.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNewRole.DisabledState.Parent = this.txtNewRole;
+            this.txtNewRole.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNewRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNewRole.FocusedState.Parent = this.txtNewRole;
+            this.txtNewRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNewRole.HoverState.Parent = this.txtNewRole;
+            this.txtNewRole.Location = new System.Drawing.Point(276, 292);
+            this.txtNewRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNewRole.Name = "txtNewRole";
+            this.txtNewRole.PasswordChar = '\0';
+            this.txtNewRole.PlaceholderText = "";
+            this.txtNewRole.SelectedText = "";
+            this.txtNewRole.ShadowDecoration.Parent = this.txtNewRole;
+            this.txtNewRole.Size = new System.Drawing.Size(200, 37);
+            this.txtNewRole.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(280, 271);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Yeni Rol ";
+            // 
+            // btnAddRole
+            // 
+            this.btnAddRole.CheckedState.Parent = this.btnAddRole;
+            this.btnAddRole.CustomImages.Parent = this.btnAddRole;
+            this.btnAddRole.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(63)))), ((int)(((byte)(25)))));
+            this.btnAddRole.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRole.ForeColor = System.Drawing.Color.White;
+            this.btnAddRole.HoverState.Parent = this.btnAddRole;
+            this.btnAddRole.Location = new System.Drawing.Point(483, 292);
+            this.btnAddRole.Name = "btnAddRole";
+            this.btnAddRole.ShadowDecoration.Parent = this.btnAddRole;
+            this.btnAddRole.Size = new System.Drawing.Size(39, 37);
+            this.btnAddRole.TabIndex = 11;
+            this.btnAddRole.Text = "+";
+            this.btnAddRole.Click += new System.EventHandler(this.btnAddRole_Click);
+            // 
             // frmPersonelAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 454);
+            this.Controls.Add(this.btnAddRole);
+            this.Controls.Add(this.txtNewRole);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtSifre);
             this.Controls.Add(this.txtTCKN);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPhone);
@@ -276,18 +330,21 @@
             this.Name = "frmPersonelAdd";
             this.Text = " ";
             this.Load += new System.EventHandler(this.frmPersonelAdd_Load);
-            this.Controls.SetChildIndex(this.guna2Panel1, 0);
-            this.Controls.SetChildIndex(this.guna2Panel2, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txtName, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.txtPhone, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.txtTCKN, 0);
             this.Controls.SetChildIndex(this.TxtSifre, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.cbRole, 0);
+            this.Controls.SetChildIndex(this.txtNewRole, 0);
+            this.Controls.SetChildIndex(this.guna2Panel1, 0);
+            this.Controls.SetChildIndex(this.guna2Panel2, 0);
+            this.Controls.SetChildIndex(this.btnAddRole, 0);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -309,5 +366,8 @@
         public Guna.UI2.WinForms.Guna2TextBox txtTCKN;
         private System.Windows.Forms.Label label6;
         public Guna.UI2.WinForms.Guna2TextBox TxtSifre;
+        private Guna.UI2.WinForms.Guna2TextBox txtNewRole;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button btnAddRole;
     }
 }

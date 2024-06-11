@@ -42,6 +42,10 @@
             this.btnÖde = new Guna.UI2.WinForms.Guna2Button();
             this.cbOrderType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.guna2RadioButton1 = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.KartNakit = new System.Windows.Forms.Label();
+            this.Nakit = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -204,7 +208,7 @@
             this.guna2Panel1.Controls.Add(this.btnÖde);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 373);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 457);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(665, 65);
@@ -242,8 +246,8 @@
             this.cbOrderType.HoverState.Parent = this.cbOrderType;
             this.cbOrderType.ItemHeight = 30;
             this.cbOrderType.Items.AddRange(new object[] {
-            "Take Away",
-            "Din in"});
+            "Take Away\t",
+            "Dine in"});
             this.cbOrderType.ItemsAppearance.Parent = this.cbOrderType;
             this.cbOrderType.Location = new System.Drawing.Point(286, 274);
             this.cbOrderType.Name = "cbOrderType";
@@ -258,18 +262,86 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(282, 242);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 21);
+            this.label3.Size = new System.Drawing.Size(122, 21);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Take Away/Din İn";
+            this.label3.Text = "Al Götür/Servis";
+            // 
+            // guna2RadioButton1
+            // 
+            this.guna2RadioButton1.AutoSize = true;
+            this.guna2RadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2RadioButton1.CheckedState.BorderThickness = 0;
+            this.guna2RadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2RadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2RadioButton1.CheckedState.InnerOffset = -4;
+            this.guna2RadioButton1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2RadioButton1.Location = new System.Drawing.Point(66, 363);
+            this.guna2RadioButton1.Name = "guna2RadioButton1";
+            this.guna2RadioButton1.Size = new System.Drawing.Size(56, 23);
+            this.guna2RadioButton1.TabIndex = 20;
+            this.guna2RadioButton1.Text = "Kart";
+            this.guna2RadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2RadioButton1.UncheckedState.BorderThickness = 2;
+            this.guna2RadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2RadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.guna2RadioButton1.UseVisualStyleBackColor = true;
+            this.guna2RadioButton1.CheckedChanged += new System.EventHandler(this.guna2RadioButton1_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(59, 325);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 19);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Kart/Nakit";
+            // 
+            // KartNakit
+            // 
+            this.KartNakit.AutoSize = true;
+            this.KartNakit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KartNakit.Location = new System.Drawing.Point(258, 363);
+            this.KartNakit.Name = "KartNakit";
+            this.KartNakit.Size = new System.Drawing.Size(53, 19);
+            this.KartNakit.TabIndex = 17;
+            this.KartNakit.Text = "Label7";
+            this.KartNakit.Visible = false;
+            // 
+            // Nakit
+            // 
+            this.Nakit.AutoSize = true;
+            this.Nakit.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Nakit.CheckedState.BorderThickness = 0;
+            this.Nakit.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Nakit.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.Nakit.CheckedState.InnerOffset = -4;
+            this.Nakit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nakit.Location = new System.Drawing.Point(151, 363);
+            this.Nakit.Name = "Nakit";
+            this.Nakit.Size = new System.Drawing.Size(64, 23);
+            this.Nakit.TabIndex = 21;
+            this.Nakit.TabStop = true;
+            this.Nakit.Text = "Nakit";
+            this.Nakit.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.Nakit.UncheckedState.BorderThickness = 2;
+            this.Nakit.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.Nakit.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.Nakit.UseVisualStyleBackColor = true;
+            this.Nakit.CheckedChanged += new System.EventHandler(this.guna2RadioButton3_CheckedChanged);
             // 
             // FrmOdemeAl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(665, 438);
+            this.ClientSize = new System.Drawing.Size(665, 522);
+            this.Controls.Add(this.Nakit);
+            this.Controls.Add(this.guna2RadioButton1);
             this.Controls.Add(this.cbOrderType);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.txtChange);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.KartNakit);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtReceived);
             this.Controls.Add(this.label4);
@@ -309,5 +381,9 @@
         public Guna.UI2.WinForms.Guna2Button btnÖde;
         private Guna.UI2.WinForms.Guna2ComboBox cbOrderType;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label KartNakit;
+        private Guna.UI2.WinForms.Guna2RadioButton Nakit;
     }
 }

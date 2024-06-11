@@ -74,9 +74,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(75, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 21);
@@ -85,7 +85,8 @@
             // 
             // TxtPass
             // 
-            this.TxtPass.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TxtPass.BackColor = System.Drawing.Color.Transparent;
+            this.TxtPass.BorderRadius = 15;
             this.TxtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtPass.DefaultText = "";
             this.TxtPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -111,7 +112,8 @@
             // 
             // TxtUser
             // 
-            this.TxtUser.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TxtUser.BackColor = System.Drawing.Color.Transparent;
+            this.TxtUser.BorderRadius = 15;
             this.TxtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtUser.DefaultText = "";
             this.TxtUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -137,9 +139,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(75, 146);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 21);
@@ -151,7 +153,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(158, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 23);
@@ -179,6 +181,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.BackgroundImage = global::POS.Properties.Resources.aesthetic_brown_lines_background_scaled2;
             this.guna2Panel1.Controls.Add(this.TxtUser);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.label1);

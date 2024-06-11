@@ -30,7 +30,7 @@ namespace POS.Model
         }
         private void LoadData()
         {
-            string qry = @"select MainID, SiparisId, PersonelAd, orderType, status, total From tblMain
+            string qry = @"select MainID, SiparisId, PersonelAd, orderType, status, total,KartNakit From tblMain
                            where status <> 'Hold'";
             ListBox lb = new ListBox();
             lb.Items.Add(dgvid);
@@ -39,6 +39,7 @@ namespace POS.Model
             lb.Items.Add(dgvType);
             lb.Items.Add(dgvStatus);
             lb.Items.Add(dgvTotal);
+            lb.Items.Add(dgvKartNakit);
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
         }
@@ -80,7 +81,7 @@ namespace POS.Model
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             // Define the query with parameter placeholders
-            string qry = @"SELECT MainID, SiparisId, PersonelAd, orderType, status, total 
+            string qry = @"SELECT MainID, SiparisId, PersonelAd, orderType, status, total, KartNakit
                    FROM tblMain
                    WHERE aDate BETWEEN @sdate AND @edate";
 

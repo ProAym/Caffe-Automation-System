@@ -5,10 +5,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace POS.Model
 {
@@ -60,8 +62,10 @@ namespace POS.Model
                 return; // Exit the method if validation fails
             }
 
-            string qry = @"Update tblMain set total = @total, received = @received, change = @change, status = 'Ödendi', orderType = @orderType
-                            WHERE MainID = @id";
+            string qry = @"Update tblMain set total = @total, received = @received, change = @change, status = 'Ödendi', orderType = @orderType,kartNakit = @kartNakit
+                            WHERE MainID = @id  ";
+
+           
 
             Hashtable ht = new Hashtable();
             ht.Add("@total", txtBillAmount.Text);
@@ -69,11 +73,24 @@ namespace POS.Model
             ht.Add("@change", txtChange.Text);
             ht.Add("@orderType", cbOrderType.Text);
             ht.Add("@id", MainID);
+            ht.Add("@KartNakit", KartNakit.Text);
+
+
+
+
 
             if (MainClass.SQL(qry, ht) > 0)
             {
-                MessageBox.Show("Ödeme alabilmek için Kasa açılmıştır!!!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                if(KartNakit.Text == "Nakit") {
+                    MessageBox.Show("Ödeme alabilmek için Kasa açılmıştır!!!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Temassız Ödeme Yönlendirilmiştir!!!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                
             }
         }
 
@@ -132,6 +149,22 @@ namespace POS.Model
         private void FrmodemeAl_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void guna2RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2RadioButton1.Checked == true)
+            {
+                KartNakit.Text = "Kart";
+            }
+        }
+
+        private void guna2RadioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Nakit.Checked == true)
+            {
+                KartNakit.Text = "Nakit";
+            }
         }
     }
 }

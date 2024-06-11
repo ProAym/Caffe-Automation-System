@@ -317,6 +317,8 @@ namespace POS.Raporlar {
             
             private global::System.Data.DataColumn columnKategoriID;
             
+            private global::System.Data.DataColumn columnKartNakit;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DataTable_FisDataTable() {
@@ -504,6 +506,14 @@ namespace POS.Raporlar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KartNakitColumn {
+                get {
+                    return this.columnKartNakit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -558,7 +568,8 @@ namespace POS.Raporlar {
                         string uID, 
                         string uAd, 
                         string uFiyat, 
-                        string KategoriID) {
+                        string KategoriID, 
+                        string KartNakit) {
                 DataTable_FisRow rowDataTable_FisRow = ((DataTable_FisRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MainID,
@@ -579,7 +590,8 @@ namespace POS.Raporlar {
                         uID,
                         uAd,
                         uFiyat,
-                        KategoriID};
+                        KategoriID,
+                        KartNakit};
                 rowDataTable_FisRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable_FisRow);
                 return rowDataTable_FisRow;
@@ -621,6 +633,7 @@ namespace POS.Raporlar {
                 this.columnuAd = base.Columns["uAd"];
                 this.columnuFiyat = base.Columns["uFiyat"];
                 this.columnKategoriID = base.Columns["KategoriID"];
+                this.columnKartNakit = base.Columns["KartNakit"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -664,6 +677,8 @@ namespace POS.Raporlar {
                 base.Columns.Add(this.columnuFiyat);
                 this.columnKategoriID = new global::System.Data.DataColumn("KategoriID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKategoriID);
+                this.columnKartNakit = new global::System.Data.DataColumn("KartNakit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKartNakit);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1110,6 +1125,22 @@ namespace POS.Raporlar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string KartNakit {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable_Fis.KartNakitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KartNakit\' in table \'DataTable_Fis\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable_Fis.KartNakitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsMainIDNull() {
                 return this.IsNull(this.tableDataTable_Fis.MainIDColumn);
             }
@@ -1334,6 +1365,18 @@ namespace POS.Raporlar {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetKategoriIDNull() {
                 this[this.tableDataTable_Fis.KategoriIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsKartNakitNull() {
+                return this.IsNull(this.tableDataTable_Fis.KartNakitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetKartNakitNull() {
+                this[this.tableDataTable_Fis.KartNakitColumn] = global::System.Convert.DBNull;
             }
         }
         

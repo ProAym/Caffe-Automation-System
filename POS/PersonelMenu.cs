@@ -84,17 +84,19 @@ namespace POS
             }
             
         }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void SiparisAl_Click_1(object sender, EventArgs e)
         {
             frmPOS frm = new frmPOS();
             frm.Show();
         }
+
 
         private void PersonelMenu_Load_1(object sender, EventArgs e)
         {
             PersonelIsim.Text = MainClass.USER;
             _obj = this;
         }
+
+      
     }
 }

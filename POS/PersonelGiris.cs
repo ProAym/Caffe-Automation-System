@@ -49,5 +49,7 @@ namespace POS
             Secme1Ekran frm = new Secme1Ekran();
             frm.Show();
         }
+
+        
     }
 }

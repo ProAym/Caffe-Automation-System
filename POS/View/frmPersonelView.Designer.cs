@@ -69,6 +69,7 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.Location = new System.Drawing.Point(604, 75);
+            this.txtSearch.PlaceholderText = "Personel Ara";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             // 
             // label2
@@ -232,7 +233,7 @@
             this.Personel.ShadowDecoration.Parent = this.Personel;
             this.Personel.Size = new System.Drawing.Size(197, 47);
             this.Personel.TabIndex = 7;
-            this.Personel.Text = "Personel Listesini Yazdir";
+            this.Personel.Text = "Personel Listesini Yazdır";
             this.Personel.Click += new System.EventHandler(this.Personel_Click);
             // 
             // frmPersonelView

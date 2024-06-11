@@ -295,6 +295,8 @@ namespace POS.Raporlar {
             
             private global::System.Data.DataColumn columnTotalPrice;
             
+            private global::System.Data.DataColumn _columnSum_TotalPrice_;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DataTable_ByCategoryDataTable() {
@@ -394,6 +396,14 @@ namespace POS.Raporlar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn _Sum_TotalPrice_Column {
+                get {
+                    return this._columnSum_TotalPrice_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +439,7 @@ namespace POS.Raporlar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable_ByCategoryRow AddDataTable_ByCategoryRow(string catName, string aDate, string uAd, string qty, string uFiyat, string Toplam, string TotalQty, string TotalPrice) {
+            public DataTable_ByCategoryRow AddDataTable_ByCategoryRow(string catName, string aDate, string uAd, string qty, string uFiyat, string Toplam, string TotalQty, string TotalPrice, string _Sum_TotalPrice_) {
                 DataTable_ByCategoryRow rowDataTable_ByCategoryRow = ((DataTable_ByCategoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         catName,
@@ -439,7 +449,8 @@ namespace POS.Raporlar {
                         uFiyat,
                         Toplam,
                         TotalQty,
-                        TotalPrice};
+                        TotalPrice,
+                        _Sum_TotalPrice_};
                 rowDataTable_ByCategoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable_ByCategoryRow);
                 return rowDataTable_ByCategoryRow;
@@ -470,6 +481,7 @@ namespace POS.Raporlar {
                 this.columnToplam = base.Columns["Toplam"];
                 this.columnTotalQty = base.Columns["TotalQty"];
                 this.columnTotalPrice = base.Columns["TotalPrice"];
+                this._columnSum_TotalPrice_ = base.Columns["Sum(TotalPrice)"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,6 +503,10 @@ namespace POS.Raporlar {
                 base.Columns.Add(this.columnTotalQty);
                 this.columnTotalPrice = new global::System.Data.DataColumn("TotalPrice", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalPrice);
+                this._columnSum_TotalPrice_ = new global::System.Data.DataColumn("Sum(TotalPrice)", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnSum_TotalPrice_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnSum_TotalPrice_");
+                this._columnSum_TotalPrice_.ExtendedProperties.Add("Generator_UserColumnName", "Sum(TotalPrice)");
+                base.Columns.Add(this._columnSum_TotalPrice_);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -761,6 +777,23 @@ namespace POS.Raporlar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string _Sum_TotalPrice_ {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable_ByCategory._Sum_TotalPrice_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sum(TotalPrice)\' in table \'DataTable_ByCategory\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable_ByCategory._Sum_TotalPrice_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscatNameNull() {
                 return this.IsNull(this.tableDataTable_ByCategory.catNameColumn);
             }
@@ -853,6 +886,18 @@ namespace POS.Raporlar {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTotalPriceNull() {
                 this[this.tableDataTable_ByCategory.TotalPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Is_Sum_TotalPrice_Null() {
+                return this.IsNull(this.tableDataTable_ByCategory._Sum_TotalPrice_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Set_Sum_TotalPrice_Null() {
+                this[this.tableDataTable_ByCategory._Sum_TotalPrice_Column] = global::System.Convert.DBNull;
             }
         }
         

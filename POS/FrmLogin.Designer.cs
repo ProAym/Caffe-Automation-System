@@ -43,9 +43,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(105, 169);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 19);
@@ -55,7 +55,8 @@
             // 
             // TxtUser
             // 
-            this.TxtUser.BackColor = System.Drawing.Color.White;
+            this.TxtUser.BackColor = System.Drawing.Color.Transparent;
+            this.TxtUser.BorderColor = System.Drawing.Color.White;
             this.TxtUser.BorderRadius = 15;
             this.TxtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtUser.DefaultText = "";
@@ -82,7 +83,7 @@
             // 
             // TxtPass
             // 
-            this.TxtPass.BackColor = System.Drawing.Color.White;
+            this.TxtPass.BackColor = System.Drawing.Color.Transparent;
             this.TxtPass.BorderRadius = 15;
             this.TxtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtPass.DefaultText = "";
@@ -110,9 +111,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(117, 259);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 19);
@@ -161,7 +162,7 @@
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = global::POS.Properties.Resources.icons8_left_arrow_100;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(2, 12);
+            this.guna2Button1.Location = new System.Drawing.Point(25, 33);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(43, 40);
@@ -173,7 +174,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(142, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 39);
@@ -183,8 +184,10 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.BackgroundImage = global::POS.Properties.Resources.aesthetic_brown_lines_background_scaled3;
             this.guna2Panel1.BorderRadius = 50;
             this.guna2Panel1.Controls.Add(this.TxtUser);
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.TxtPass);
@@ -204,7 +207,6 @@
             this.BackgroundImage = global::POS.Properties.Resources.pexels_bluerhinomedia_2788792__1_;
             this.ClientSize = new System.Drawing.Size(1584, 879);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.BtnExit);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Control;

@@ -40,7 +40,7 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.SiparisAl = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -180,7 +180,7 @@
             // 
             this.guna2Panel1.BackgroundImage = global::POS.Properties.Resources.aesthetic_brown_lines_background_scaled;
             this.guna2Panel1.Controls.Add(this.guna2Button5);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.SiparisAl);
             this.guna2Panel1.Controls.Add(this.guna2Button10);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
@@ -213,32 +213,32 @@
             this.guna2Button5.Text = "Çıkış Yap";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
-            // guna2Button1
+            // SiparisAl
             // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 24;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
-            this.guna2Button1.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button1.Location = new System.Drawing.Point(102, 252);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(239, 51);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "Sipariş";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.TextOffset = new System.Drawing.Point(20, 0);
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.SiparisAl.AutoRoundedCorners = true;
+            this.SiparisAl.BackColor = System.Drawing.Color.Transparent;
+            this.SiparisAl.BorderRadius = 24;
+            this.SiparisAl.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.SiparisAl.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(226)))));
+            this.SiparisAl.CheckedState.Image = global::POS.Properties.Resources.icons8_installing_updates_48__1_;
+            this.SiparisAl.CheckedState.Parent = this.SiparisAl;
+            this.SiparisAl.CustomImages.Parent = this.SiparisAl;
+            this.SiparisAl.FillColor = System.Drawing.Color.Transparent;
+            this.SiparisAl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SiparisAl.ForeColor = System.Drawing.Color.White;
+            this.SiparisAl.HoverState.Parent = this.SiparisAl;
+            this.SiparisAl.Image = global::POS.Properties.Resources.icons8_installing_updates_48;
+            this.SiparisAl.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SiparisAl.ImageOffset = new System.Drawing.Point(10, 0);
+            this.SiparisAl.Location = new System.Drawing.Point(102, 252);
+            this.SiparisAl.Name = "SiparisAl";
+            this.SiparisAl.ShadowDecoration.Parent = this.SiparisAl;
+            this.SiparisAl.Size = new System.Drawing.Size(239, 51);
+            this.SiparisAl.TabIndex = 1;
+            this.SiparisAl.Text = "Sipariş";
+            this.SiparisAl.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SiparisAl.TextOffset = new System.Drawing.Point(20, 0);
+            this.SiparisAl.Click += new System.EventHandler(this.SiparisAl_Click_1);
             // 
             // guna2Button10
             // 
@@ -596,7 +596,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox BtnExit;
         public Guna.UI2.WinForms.Guna2Panel CenterPanel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button SiparisAl;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;

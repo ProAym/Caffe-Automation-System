@@ -113,6 +113,26 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aesthetic_brown_lines_background_scaled2 {
+            get {
+                object obj = ResourceManager.GetObject("aesthetic-brown-lines-background-scaled2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aesthetic_brown_lines_background_scaled3 {
+            get {
+                object obj = ResourceManager.GetObject("aesthetic-brown-lines-background-scaled3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Buyukkafefoto {
             get {
                 object obj = ResourceManager.GetObject("Buyukkafefoto", resourceCulture);

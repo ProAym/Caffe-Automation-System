@@ -102,7 +102,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>a Date</Value>
+                                  <Value>Tarih</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -135,7 +135,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>u Ad</Value>
+                                  <Value>Ürün Adı</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -168,7 +168,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>qty</Value>
+                                  <Value>Adet</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
@@ -202,7 +202,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>u Fiyat</Value>
+                                  <Value>Fiyat</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
@@ -270,7 +270,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Qty</Value>
+                                  <Value>Toplam Adet</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
@@ -304,7 +304,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Price</Value>
+                                  <Value>Toplam Fiyat</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
@@ -502,7 +502,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="TotalQty1">
+                        <Textbox Name="TotalQty">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -519,7 +519,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>TotalQty1</rd:DefaultName>
+                          <rd:DefaultName>TotalQty</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -672,6 +672,9 @@
                   <TablixMembers>
                     <TablixMember>
                       <Group Name="Details" />
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -692,7 +695,7 @@
         <Height>4.64584in</Height>
         <Style />
       </Body>
-      <Width>11.13678in</Width>
+      <Width>11.59511in</Width>
       <Page>
         <PageHeader>
           <Height>2.25694in</Height>

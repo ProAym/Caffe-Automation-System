@@ -14,19 +14,62 @@ namespace POS.View
 {
     public partial class frmCategoryView : SampleView
     {
+
+        private void InitializeDataGridViewColumns()
+        {
+            // Ensure these columns are added to guna2DataGridView1
+            if (!guna2DataGridView1.Columns.Contains("dgvid"))
+            {
+                guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "dgvid", HeaderText = "ID" });
+            }
+
+            if (!guna2DataGridView1.Columns.Contains("dgvName"))
+            {
+                guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { Name = "dgvName", HeaderText = "Name" });
+            }
+        }
         public frmCategoryView()
         {
             InitializeComponent();
+            InitializeDataGridViewColumns();  // Ensure columns are initialized
+
         }
 
         public void GetData()
         {
-            string qry = " Select * From category where catName like '%"+ txtSearch.Text  +"%' ";
-            ListBox lb = new ListBox();
-            lb.Items.Add(dgvid);
-            lb.Items.Add(dgvName);
+            string qry = "SELECT * FROM category WHERE catName LIKE '%" + txtSearch.Text + "%'";
 
-            MainClass.LoadData(qry, guna2DataGridView1 , lb);
+            ListBox lb = new ListBox();
+
+            var dgvid = guna2DataGridView1.Columns["dgvid"];
+            var dgvName = guna2DataGridView1.Columns["dgvName"];
+
+            if (dgvid != null)
+            {
+                lb.Items.Add(dgvid);
+            }
+            else
+            {
+                MessageBox.Show("dgvid column does not exist in the DataGridView.");
+            }
+
+            if (dgvName != null)
+            {
+                lb.Items.Add(dgvName);
+            }
+            else
+            {
+                MessageBox.Show("dgvName column does not exist in the DataGridView.");
+            }
+
+            if (lb.Items.Count > 0)  // Ensure there are items to process
+            {
+                MainClass.LoadData(qry, guna2DataGridView1, lb);
+            }
+            else
+            {
+                MessageBox.Show("No valid columns were found to process.");
+            }
         }
 
 

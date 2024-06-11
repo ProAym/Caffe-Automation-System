@@ -37,10 +37,29 @@ namespace POS.Raporlar
                 string ConnectionString = "Data Source=DESKTOP-7E9QC34;Initial Catalog=RM;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
                 using (SqlConnection con = new SqlConnection(ConnectionString))
                 {
-                    string qry = @"SELECT catName,SUM(qty) AS TotalQty, SUM(Toplam) AS TotalPrice,
-                                 aDate,uAd,qty,uFiyat,Toplam  ,CONVERT(date, aDate) AS aDate FROM View_Katigori_gore_Satis
-                                    WHERE aDate BETWEEN @sdate AND @edate
-                                    GROUP BY catName, aDate, uAd, qty, uFiyat, Toplam, CONVERT(date, aDate);";
+                    string qry = @"
+        SELECT 
+            v.catName,
+            v.aDate,
+            v.uAd,
+            v.qty,
+            v.uFiyat,
+            v.Toplam,
+            ct.TotalQty,
+            ct.TotalPrice
+        FROM View_Katigori_gore_Satis v
+        JOIN (
+            SELECT 
+                catName,
+                SUM(qty) AS TotalQty,
+                SUM(Toplam) AS TotalPrice
+            FROM View_Katigori_gore_Satis
+            WHERE aDate BETWEEN @sdate AND @edate
+            GROUP BY catName
+        ) ct ON v.catName = ct.catName
+        WHERE v.aDate BETWEEN @sdate AND @edate
+        ORDER BY v.catName, v.aDate, v.uAd;
+        ";
                     SqlDataAdapter da = new SqlDataAdapter(qry, con);
                     da.SelectCommand.Parameters.AddWithValue("@sdate", startDate);
                     da.SelectCommand.Parameters.AddWithValue("@edate", endDate);

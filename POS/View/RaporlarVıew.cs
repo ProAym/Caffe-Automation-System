@@ -27,11 +27,6 @@ namespace POS.View
             frm.Show();
         }
 
-        private void Menu_Click(object sender, EventArgs e)
-        {
-           Menuler reportForm = new Menuler();
-            reportForm.Show();
-
-        }
+        
     }
 }
