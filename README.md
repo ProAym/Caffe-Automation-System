@@ -41,26 +41,39 @@ A fully functional **Cafe Automation System** built with **C#**, **Guna UI**, an
 ---
 
 ## 📸 **Preview**
+![image](https://github.com/user-attachments/assets/5b274159-72b8-4e3e-aeda-683886f9cbdb)
+
 
 ### 1. **Order Management**
 Take and track customer orders efficiently with the real-time order list and menu display.
 
-![Order Management](https://link-to-your-order-management-image.com)
+![image](https://github.com/user-attachments/assets/129638f1-a268-4920-8552-83600a0070d5)
+![image](https://github.com/user-attachments/assets/5f6c4744-3522-40d6-89c1-8d462cc85c60)
+![image](https://github.com/user-attachments/assets/5972aedd-1cfb-4d34-8406-9657fcfb3833)
+
+
 
 ### 2. **Stock Management**
 Automatically update stock levels as items are ordered and receive notifications when stock is low.
 
-![Stock Management](https://link-to-your-stock-management-image.com)
+![image](https://github.com/user-attachments/assets/6274d294-968b-40cd-a422-53f7e8431fce)
 
 ### 3. **Personnel Management**
 Easily schedule staff shifts, track work hours, and calculate payroll.
 
-![Personnel Management](https://link-to-your-personnel-management-image.com)
+![image](https://github.com/user-attachments/assets/6ba25139-94d2-4166-941b-700cca84d890)
+![image](https://github.com/user-attachments/assets/1a944a35-ceb9-4360-9809-17ce106bbc9b)
+
+
 
 ### 4. **Payment and Invoice Generation**
 Handle payments and generate invoices for each transaction (supports both cash and card payments).
 
-![Payment and Invoice](https://link-to-your-payment-invoice-image.com)
+![image](https://github.com/user-attachments/assets/7beefa9b-6076-42ea-b129-1b243fcaf615)
+![image](https://github.com/user-attachments/assets/dd359ae8-f456-47b6-a0cb-3cbeaa05374e)
+![image](https://github.com/user-attachments/assets/8fd75fbb-66cd-478b-9716-bf1cef7bcd97)
+![image](https://github.com/user-attachments/assets/39ef67cf-e642-448e-a9f8-2e574789cb33)
+
 
 ---
 
