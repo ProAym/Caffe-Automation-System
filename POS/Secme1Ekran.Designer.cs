@@ -90,7 +90,7 @@
             this.Personel.Name = "Personel";
             this.Personel.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Personel.ShadowDecoration.Parent = this.Personel;
-            this.Personel.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            this.Personel.Click += new System.EventHandler(this.Personel_Click_1);
             // 
             // BtnExit
             // 

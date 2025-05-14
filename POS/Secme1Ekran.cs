@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,13 +22,13 @@ namespace POS
 
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        private void Personel_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             PersonelGiris frm = new PersonelGiris("Personel");
             frm.Show();
-        }
 
+        }
         private void Yonetici_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -40,5 +40,7 @@ namespace POS
         {
             Application.Exit();
         }
+
+        
     }
 }

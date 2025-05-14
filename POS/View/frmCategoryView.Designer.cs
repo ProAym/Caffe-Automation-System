@@ -66,7 +66,6 @@
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
             this.txtSearch.Location = new System.Drawing.Point(762, 64);
-            this.txtSearch.PlaceholderText = "Kategori Ara";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             // 
             // label2
@@ -168,7 +167,7 @@
             // 
             // dgvName
             // 
-            this.dgvName.HeaderText = "Name";
+            this.dgvName.HeaderText = "Kategori Adı";
             this.dgvName.Name = "dgvName";
             this.dgvName.ReadOnly = true;
             // 

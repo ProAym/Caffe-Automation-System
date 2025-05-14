@@ -31,7 +31,6 @@
             this.BtnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtChange = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtReceived = new Guna.UI2.WinForms.Guna2TextBox();
@@ -47,7 +46,6 @@
             this.KartNakit = new System.Windows.Forms.Label();
             this.Nakit = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +65,6 @@
             // 
             this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Controls.Add(this.BtnExit);
-            this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(200)))), ((int)(((byte)(189)))));
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
@@ -82,20 +79,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(133, 39);
+            this.label1.Location = new System.Drawing.Point(45, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 25);
+            this.label1.Size = new System.Drawing.Size(80, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Nakit Ödeme";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Location = new System.Drawing.Point(27, 12);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(91, 81);
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
+            this.label1.Text = " Ödeme";
             // 
             // txtChange
             // 
@@ -358,7 +346,6 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrmodemeAl_MouseUp);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -370,7 +357,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox BtnExit;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         public System.Windows.Forms.Label label1;
-        public Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         public Guna.UI2.WinForms.Guna2TextBox txtChange;
         private System.Windows.Forms.Label label5;
         public Guna.UI2.WinForms.Guna2TextBox txtReceived;

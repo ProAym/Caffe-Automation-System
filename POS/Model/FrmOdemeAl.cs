@@ -166,5 +166,7 @@ namespace POS.Model
                 KartNakit.Text = "Nakit";
             }
         }
+
+        
     }
 }
